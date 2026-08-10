@@ -10,14 +10,14 @@ const hash = (x: number, y: number) => {
   return h - Math.floor(h);
 };
 
+const UPTIME_DATA = Array.from({ length: 90 }, (_, i) => {
+  if (i === 12 || i === 45 || i === 78) return 0.8;
+  if (i === 22 || i === 60) return 0;
+  return 1;
+});
+
 export function UptimeChart({ theme = 'dark', compact = false }: { theme?: 'dark' | 'light'; compact?: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  const data = Array.from({ length: 90 }, (_, i) => {
-    if (i === 12 || i === 45 || i === 78) return 0.8;
-    if (i === 22 || i === 60) return 0;
-    return 1;
-  });
 
   useEffect(() => {
     let req: number;
@@ -31,6 +31,11 @@ export function UptimeChart({ theme = 'dark', compact = false }: { theme?: 'dark
       
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
+
+      if (rect.width <= 0 || rect.height <= 0) {
+        req = requestAnimationFrame(draw);
+        return;
+      }
       
       if (canvas.width !== rect.width * dpr || canvas.height !== rect.height * dpr) {
         canvas.width = rect.width * dpr;
@@ -42,11 +47,11 @@ export function UptimeChart({ theme = 'dark', compact = false }: { theme?: 'dark
       ctx.clearRect(0, 0, rect.width, rect.height);
       
       const w = rect.width;
-      const days = data.length;
+      const days = UPTIME_DATA.length;
       
       const barW = 6;
       const gap = 2;
-      const perRow = Math.floor(w / (barW + gap));
+      const perRow = Math.max(1, Math.floor(w / (barW + gap)));
       const cell = 2;
 
       for (let i = 0; i < days; i++) {
@@ -56,7 +61,7 @@ export function UptimeChart({ theme = 'dark', compact = false }: { theme?: 'dark
         const x = col * (barW + gap);
         const y = row * (26 + gap);
         
-        const val = data[i];
+        const val = UPTIME_DATA[i];
         const color = val === 1 ? '#FFFFFF' : val === 0 ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.6)';
         
         ctx.save();
@@ -89,7 +94,7 @@ export function UptimeChart({ theme = 'dark', compact = false }: { theme?: 'dark
     
     req = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(req);
-  }, [data]);
+  }, []);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-2">
