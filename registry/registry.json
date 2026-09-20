@@ -16,7 +16,7 @@
         {
           "path": "registry/ui/entrance/fade-in.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fade-in.tsx"
+          "target": "components/amicro/fade-in.tsx"
         }
       ]
     },
@@ -33,7 +33,7 @@
         {
           "path": "registry/ui/entrance/fade-up.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fade-up.tsx"
+          "target": "components/amicro/fade-up.tsx"
         }
       ]
     },
@@ -50,7 +50,7 @@
         {
           "path": "registry/ui/entrance/fade-down.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fade-down.tsx"
+          "target": "components/amicro/fade-down.tsx"
         }
       ]
     },
@@ -67,7 +67,7 @@
         {
           "path": "registry/ui/entrance/slide-left.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/slide-left.tsx"
+          "target": "components/amicro/slide-left.tsx"
         }
       ]
     },
@@ -84,7 +84,7 @@
         {
           "path": "registry/ui/entrance/slide-right.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/slide-right.tsx"
+          "target": "components/amicro/slide-right.tsx"
         }
       ]
     },
@@ -101,7 +101,7 @@
         {
           "path": "registry/ui/entrance/scale-in.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/scale-in.tsx"
+          "target": "components/amicro/scale-in.tsx"
         }
       ]
     },
@@ -118,7 +118,7 @@
         {
           "path": "registry/ui/entrance/zoom-in.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/zoom-in.tsx"
+          "target": "components/amicro/zoom-in.tsx"
         }
       ]
     },
@@ -135,7 +135,7 @@
         {
           "path": "registry/ui/text/text-reveal.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/text-reveal.tsx"
+          "target": "components/amicro/text-reveal.tsx"
         }
       ]
     },
@@ -152,7 +152,7 @@
         {
           "path": "registry/ui/text/word-reveal.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/word-reveal.tsx"
+          "target": "components/amicro/word-reveal.tsx"
         }
       ]
     },
@@ -169,7 +169,7 @@
         {
           "path": "registry/ui/text/blur-text.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/blur-text.tsx"
+          "target": "components/amicro/blur-text.tsx"
         }
       ]
     },
@@ -186,7 +186,7 @@
         {
           "path": "registry/ui/text/character-stagger.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/character-stagger.tsx"
+          "target": "components/amicro/character-stagger.tsx"
         }
       ]
     },
@@ -203,7 +203,7 @@
         {
           "path": "registry/ui/hover/card-hover.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/card-hover.tsx"
+          "target": "components/amicro/card-hover.tsx"
         }
       ]
     },
@@ -220,7 +220,7 @@
         {
           "path": "registry/ui/hover/tilt-card.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/tilt-card.tsx"
+          "target": "components/amicro/tilt-card.tsx"
         }
       ]
     },
@@ -237,7 +237,7 @@
         {
           "path": "registry/ui/hover/magnetic-button.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/magnetic-button.tsx"
+          "target": "components/amicro/magnetic-button.tsx"
         }
       ]
     },
@@ -254,7 +254,7 @@
         {
           "path": "registry/ui/hover/glow-button.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/glow-button.tsx"
+          "target": "components/amicro/glow-button.tsx"
         }
       ]
     },
@@ -271,7 +271,7 @@
         {
           "path": "registry/ui/cursor/cursor-trail.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/cursor-trail.tsx"
+          "target": "components/amicro/cursor-trail.tsx"
         }
       ]
     },
@@ -288,7 +288,7 @@
         {
           "path": "registry/ui/cursor/spotlight.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spotlight.tsx"
+          "target": "components/amicro/spotlight.tsx"
         }
       ]
     },
@@ -305,7 +305,7 @@
         {
           "path": "registry/ui/cursor/mouse-follow.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/mouse-follow.tsx"
+          "target": "components/amicro/mouse-follow.tsx"
         }
       ]
     },
@@ -322,7 +322,7 @@
         {
           "path": "registry/ui/scroll/scroll-reveal.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/scroll-reveal.tsx"
+          "target": "components/amicro/scroll-reveal.tsx"
         }
       ]
     },
@@ -339,7 +339,7 @@
         {
           "path": "registry/ui/scroll/progress-indicator.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/progress-indicator.tsx"
+          "target": "components/amicro/progress-indicator.tsx"
         }
       ]
     },
@@ -356,7 +356,7 @@
         {
           "path": "registry/ui/scroll/sticky-reveal.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/sticky-reveal.tsx"
+          "target": "components/amicro/sticky-reveal.tsx"
         }
       ]
     },
@@ -373,7 +373,7 @@
         {
           "path": "registry/ui/loading/skeleton.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/skeleton.tsx"
+          "target": "components/amicro/skeleton.tsx"
         }
       ]
     },
@@ -390,7 +390,7 @@
         {
           "path": "registry/ui/loading/pulse.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pulse.tsx"
+          "target": "components/amicro/pulse.tsx"
         }
       ]
     },
@@ -407,7 +407,7 @@
         {
           "path": "registry/ui/loading/morph-loader.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/morph-loader.tsx"
+          "target": "components/amicro/morph-loader.tsx"
         }
       ]
     },
@@ -422,7 +422,7 @@
         {
           "path": "registry/hooks/use-scroll-progress.ts",
           "type": "registry:hook",
-          "target": "@hooks/use-scroll-progress.ts"
+          "target": "hooks/use-scroll-progress.ts"
         }
       ]
     },
@@ -437,7 +437,7 @@
         {
           "path": "registry/hooks/use-mouse-position.ts",
           "type": "registry:hook",
-          "target": "@hooks/use-mouse-position.ts"
+          "target": "hooks/use-mouse-position.ts"
         }
       ]
     },
@@ -452,7 +452,7 @@
         {
           "path": "registry/hooks/use-stagger.ts",
           "type": "registry:hook",
-          "target": "@hooks/use-stagger.ts"
+          "target": "hooks/use-stagger.ts"
         }
       ]
     },
@@ -467,7 +467,7 @@
         {
           "path": "registry/hooks/use-reduced-motion.ts",
           "type": "registry:hook",
-          "target": "@hooks/use-reduced-motion.ts"
+          "target": "hooks/use-reduced-motion.ts"
         }
       ]
     },
@@ -482,7 +482,7 @@
         {
           "path": "registry/hooks/use-web-haptics.ts",
           "type": "registry:hook",
-          "target": "@hooks/use-web-haptics.ts"
+          "target": "hooks/use-web-haptics.ts"
         }
       ]
     },
@@ -497,7 +497,7 @@
         {
           "path": "registry/lib/presets.ts",
           "type": "registry:lib",
-          "target": "@lib/presets.ts"
+          "target": "lib/presets.ts"
         }
       ]
     },
@@ -515,7 +515,7 @@
         {
           "path": "registry/lib/utils.ts",
           "type": "registry:lib",
-          "target": "@lib/utils.ts"
+          "target": "lib/utils.ts"
         }
       ]
     },
@@ -532,7 +532,7 @@
         {
           "path": "registry/ui/loading/accordion-loader.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/accordion-loader.tsx"
+          "target": "components/amicro/accordion-loader.tsx"
         }
       ]
     },
@@ -549,7 +549,7 @@
         {
           "path": "registry/ui/loading/app-icon-load.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/app-icon-load.tsx"
+          "target": "components/amicro/app-icon-load.tsx"
         }
       ]
     },
@@ -566,7 +566,7 @@
         {
           "path": "registry/ui/loading/apple-breathe.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-breathe.tsx"
+          "target": "components/amicro/apple-breathe.tsx"
         }
       ]
     },
@@ -583,7 +583,7 @@
         {
           "path": "registry/ui/loading/apple-equalizer.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-equalizer.tsx"
+          "target": "components/amicro/apple-equalizer.tsx"
         }
       ]
     },
@@ -600,7 +600,7 @@
         {
           "path": "registry/ui/loading/apple-icon-morph.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-icon-morph.tsx"
+          "target": "components/amicro/apple-icon-morph.tsx"
         }
       ]
     },
@@ -617,7 +617,7 @@
         {
           "path": "registry/ui/loading/apple-pulse-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-pulse-dots.tsx"
+          "target": "components/amicro/apple-pulse-dots.tsx"
         }
       ]
     },
@@ -634,7 +634,7 @@
         {
           "path": "registry/ui/loading/apple-scale-pulse.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-scale-pulse.tsx"
+          "target": "components/amicro/apple-scale-pulse.tsx"
         }
       ]
     },
@@ -651,7 +651,7 @@
         {
           "path": "registry/ui/loading/apple-sound-wave.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-sound-wave.tsx"
+          "target": "components/amicro/apple-sound-wave.tsx"
         }
       ]
     },
@@ -668,7 +668,7 @@
         {
           "path": "registry/ui/loading/apple-text-reveal.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-text-reveal.tsx"
+          "target": "components/amicro/apple-text-reveal.tsx"
         }
       ]
     },
@@ -685,7 +685,7 @@
         {
           "path": "registry/ui/loading/apple-unlock.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/apple-unlock.tsx"
+          "target": "components/amicro/apple-unlock.tsx"
         }
       ]
     },
@@ -702,7 +702,7 @@
         {
           "path": "registry/ui/loading/arc-tracer.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/arc-tracer.tsx"
+          "target": "components/amicro/arc-tracer.tsx"
         }
       ]
     },
@@ -719,7 +719,7 @@
         {
           "path": "registry/ui/loading/bar-cascade.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bar-cascade.tsx"
+          "target": "components/amicro/bar-cascade.tsx"
         }
       ]
     },
@@ -736,7 +736,7 @@
         {
           "path": "registry/ui/loading/bar-sweep.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bar-sweep.tsx"
+          "target": "components/amicro/bar-sweep.tsx"
         }
       ]
     },
@@ -753,7 +753,7 @@
         {
           "path": "registry/ui/loading/bobbing-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bobbing-dots.tsx"
+          "target": "components/amicro/bobbing-dots.tsx"
         }
       ]
     },
@@ -770,7 +770,7 @@
         {
           "path": "registry/ui/loading/bounce-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bounce-dots.tsx"
+          "target": "components/amicro/bounce-dots.tsx"
         }
       ]
     },
@@ -787,7 +787,7 @@
         {
           "path": "registry/ui/loading/bouncing-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bouncing-bars.tsx"
+          "target": "components/amicro/bouncing-bars.tsx"
         }
       ]
     },
@@ -804,7 +804,7 @@
         {
           "path": "registry/ui/loading/bouncing-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bouncing-dots.tsx"
+          "target": "components/amicro/bouncing-dots.tsx"
         }
       ]
     },
@@ -821,7 +821,7 @@
         {
           "path": "registry/ui/loading/bouncing-lines.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bouncing-lines.tsx"
+          "target": "components/amicro/bouncing-lines.tsx"
         }
       ]
     },
@@ -838,7 +838,7 @@
         {
           "path": "registry/ui/loading/bouncing-square.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/bouncing-square.tsx"
+          "target": "components/amicro/bouncing-square.tsx"
         }
       ]
     },
@@ -855,7 +855,7 @@
         {
           "path": "registry/ui/loading/breathe-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/breathe-ring.tsx"
+          "target": "components/amicro/breathe-ring.tsx"
         }
       ]
     },
@@ -872,7 +872,7 @@
         {
           "path": "registry/ui/loading/breathing-glow.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/breathing-glow.tsx"
+          "target": "components/amicro/breathing-glow.tsx"
         }
       ]
     },
@@ -889,7 +889,7 @@
         {
           "path": "registry/ui/loading/breathing-square.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/breathing-square.tsx"
+          "target": "components/amicro/breathing-square.tsx"
         }
       ]
     },
@@ -906,7 +906,7 @@
         {
           "path": "registry/ui/loading/circular-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/circular-bars.tsx"
+          "target": "components/amicro/circular-bars.tsx"
         }
       ]
     },
@@ -923,7 +923,7 @@
         {
           "path": "registry/ui/loading/classic-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/classic-spinner.tsx"
+          "target": "components/amicro/classic-spinner.tsx"
         }
       ]
     },
@@ -940,7 +940,7 @@
         {
           "path": "registry/ui/loading/clock-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/clock-spinner.tsx"
+          "target": "components/amicro/clock-spinner.tsx"
         }
       ]
     },
@@ -957,7 +957,7 @@
         {
           "path": "registry/ui/loading/comet-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/comet-spinner.tsx"
+          "target": "components/amicro/comet-spinner.tsx"
         }
       ]
     },
@@ -974,7 +974,7 @@
         {
           "path": "registry/ui/loading/concentric-pulse.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/concentric-pulse.tsx"
+          "target": "components/amicro/concentric-pulse.tsx"
         }
       ]
     },
@@ -991,7 +991,7 @@
         {
           "path": "registry/ui/loading/concentric-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/concentric-ring.tsx"
+          "target": "components/amicro/concentric-ring.tsx"
         }
       ]
     },
@@ -1008,7 +1008,7 @@
         {
           "path": "registry/ui/loading/concentric-squares.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/concentric-squares.tsx"
+          "target": "components/amicro/concentric-squares.tsx"
         }
       ]
     },
@@ -1025,7 +1025,7 @@
         {
           "path": "registry/ui/loading/conveyor-loop.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/conveyor-loop.tsx"
+          "target": "components/amicro/conveyor-loop.tsx"
         }
       ]
     },
@@ -1042,7 +1042,7 @@
         {
           "path": "registry/ui/loading/cross-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/cross-spinner.tsx"
+          "target": "components/amicro/cross-spinner.tsx"
         }
       ]
     },
@@ -1059,7 +1059,7 @@
         {
           "path": "registry/ui/loading/cube-flip-spring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/cube-flip-spring.tsx"
+          "target": "components/amicro/cube-flip-spring.tsx"
         }
       ]
     },
@@ -1076,7 +1076,7 @@
         {
           "path": "registry/ui/loading/dash-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/dash-ring.tsx"
+          "target": "components/amicro/dash-ring.tsx"
         }
       ]
     },
@@ -1093,7 +1093,7 @@
         {
           "path": "registry/ui/loading/dashed-spiral.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/dashed-spiral.tsx"
+          "target": "components/amicro/dashed-spiral.tsx"
         }
       ]
     },
@@ -1110,7 +1110,7 @@
         {
           "path": "registry/ui/loading/diamond-grid.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/diamond-grid.tsx"
+          "target": "components/amicro/diamond-grid.tsx"
         }
       ]
     },
@@ -1127,7 +1127,7 @@
         {
           "path": "registry/ui/loading/diamond-rotate-spring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/diamond-rotate-spring.tsx"
+          "target": "components/amicro/diamond-rotate-spring.tsx"
         }
       ]
     },
@@ -1144,7 +1144,7 @@
         {
           "path": "registry/ui/loading/dot-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/dot-spinner.tsx"
+          "target": "components/amicro/dot-spinner.tsx"
         }
       ]
     },
@@ -1161,7 +1161,7 @@
         {
           "path": "registry/ui/loading/dots-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/dots-ring.tsx"
+          "target": "components/amicro/dots-ring.tsx"
         }
       ]
     },
@@ -1178,7 +1178,7 @@
         {
           "path": "registry/ui/loading/double-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/double-ring.tsx"
+          "target": "components/amicro/double-ring.tsx"
         }
       ]
     },
@@ -1195,7 +1195,7 @@
         {
           "path": "registry/ui/loading/drop-dot.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/drop-dot.tsx"
+          "target": "components/amicro/drop-dot.tsx"
         }
       ]
     },
@@ -1212,7 +1212,7 @@
         {
           "path": "registry/ui/loading/dual-arc.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/dual-arc.tsx"
+          "target": "components/amicro/dual-arc.tsx"
         }
       ]
     },
@@ -1229,7 +1229,7 @@
         {
           "path": "registry/ui/loading/dynamic-island.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/dynamic-island.tsx"
+          "target": "components/amicro/dynamic-island.tsx"
         }
       ]
     },
@@ -1246,7 +1246,7 @@
         {
           "path": "registry/ui/loading/elastic-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/elastic-bars.tsx"
+          "target": "components/amicro/elastic-bars.tsx"
         }
       ]
     },
@@ -1263,7 +1263,7 @@
         {
           "path": "registry/ui/loading/elastic-square.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/elastic-square.tsx"
+          "target": "components/amicro/elastic-square.tsx"
         }
       ]
     },
@@ -1280,7 +1280,7 @@
         {
           "path": "registry/ui/loading/expanding-cross.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/expanding-cross.tsx"
+          "target": "components/amicro/expanding-cross.tsx"
         }
       ]
     },
@@ -1297,7 +1297,7 @@
         {
           "path": "registry/ui/loading/face-id-scan.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/face-id-scan.tsx"
+          "target": "components/amicro/face-id-scan.tsx"
         }
       ]
     },
@@ -1314,7 +1314,7 @@
         {
           "path": "registry/ui/loading/fade-arc.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fade-arc.tsx"
+          "target": "components/amicro/fade-arc.tsx"
         }
       ]
     },
@@ -1331,7 +1331,7 @@
         {
           "path": "registry/ui/loading/fade-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fade-dots.tsx"
+          "target": "components/amicro/fade-dots.tsx"
         }
       ]
     },
@@ -1348,7 +1348,7 @@
         {
           "path": "registry/ui/loading/flip-square.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/flip-square.tsx"
+          "target": "components/amicro/flip-square.tsx"
         }
       ]
     },
@@ -1365,7 +1365,7 @@
         {
           "path": "registry/ui/loading/floating-diamonds.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/floating-diamonds.tsx"
+          "target": "components/amicro/floating-diamonds.tsx"
         }
       ]
     },
@@ -1382,7 +1382,7 @@
         {
           "path": "registry/ui/loading/fluid-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fluid-bars.tsx"
+          "target": "components/amicro/fluid-bars.tsx"
         }
       ]
     },
@@ -1399,7 +1399,7 @@
         {
           "path": "registry/ui/loading/fluid-diamond.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fluid-diamond.tsx"
+          "target": "components/amicro/fluid-diamond.tsx"
         }
       ]
     },
@@ -1416,7 +1416,7 @@
         {
           "path": "registry/ui/loading/fluid-dot-orbit.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fluid-dot-orbit.tsx"
+          "target": "components/amicro/fluid-dot-orbit.tsx"
         }
       ]
     },
@@ -1433,7 +1433,7 @@
         {
           "path": "registry/ui/loading/fluid-skeleton.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/fluid-skeleton.tsx"
+          "target": "components/amicro/fluid-skeleton.tsx"
         }
       ]
     },
@@ -1450,7 +1450,7 @@
         {
           "path": "registry/ui/loading/gears.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/gears.tsx"
+          "target": "components/amicro/gears.tsx"
         }
       ]
     },
@@ -1467,7 +1467,7 @@
         {
           "path": "registry/ui/loading/glassmorphic-card.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/glassmorphic-card.tsx"
+          "target": "components/amicro/glassmorphic-card.tsx"
         }
       ]
     },
@@ -1484,7 +1484,7 @@
         {
           "path": "registry/ui/loading/gradient-arc.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/gradient-arc.tsx"
+          "target": "components/amicro/gradient-arc.tsx"
         }
       ]
     },
@@ -1501,7 +1501,7 @@
         {
           "path": "registry/ui/loading/grid-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/grid-dots.tsx"
+          "target": "components/amicro/grid-dots.tsx"
         }
       ]
     },
@@ -1518,7 +1518,7 @@
         {
           "path": "registry/ui/loading/haptic-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/haptic-ring.tsx"
+          "target": "components/amicro/haptic-ring.tsx"
         }
       ]
     },
@@ -1535,7 +1535,7 @@
         {
           "path": "registry/ui/loading/heartbeat.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/heartbeat.tsx"
+          "target": "components/amicro/heartbeat.tsx"
         }
       ]
     },
@@ -1552,7 +1552,7 @@
         {
           "path": "registry/ui/loading/hexagon-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/hexagon-spinner.tsx"
+          "target": "components/amicro/hexagon-spinner.tsx"
         }
       ]
     },
@@ -1569,7 +1569,7 @@
         {
           "path": "registry/ui/loading/hourglass.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/hourglass.tsx"
+          "target": "components/amicro/hourglass.tsx"
         }
       ]
     },
@@ -1586,7 +1586,7 @@
         {
           "path": "registry/ui/loading/infinity-path.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/infinity-path.tsx"
+          "target": "components/amicro/infinity-path.tsx"
         }
       ]
     },
@@ -1603,7 +1603,7 @@
         {
           "path": "registry/ui/loading/intersecting-rings.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/intersecting-rings.tsx"
+          "target": "components/amicro/intersecting-rings.tsx"
         }
       ]
     },
@@ -1620,7 +1620,7 @@
         {
           "path": "registry/ui/loading/ios-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/ios-spinner.tsx"
+          "target": "components/amicro/ios-spinner.tsx"
         }
       ]
     },
@@ -1637,7 +1637,7 @@
         {
           "path": "registry/ui/loading/line-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/line-spinner.tsx"
+          "target": "components/amicro/line-spinner.tsx"
         }
       ]
     },
@@ -1654,7 +1654,7 @@
         {
           "path": "registry/ui/loading/liquid-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/liquid-dots.tsx"
+          "target": "components/amicro/liquid-dots.tsx"
         }
       ]
     },
@@ -1671,7 +1671,7 @@
         {
           "path": "registry/ui/loading/mac-terminal.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/mac-terminal.tsx"
+          "target": "components/amicro/mac-terminal.tsx"
         }
       ]
     },
@@ -1688,7 +1688,7 @@
         {
           "path": "registry/ui/loading/magnetic-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/magnetic-dots.tsx"
+          "target": "components/amicro/magnetic-dots.tsx"
         }
       ]
     },
@@ -1705,7 +1705,7 @@
         {
           "path": "registry/ui/loading/minimal-triangle.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/minimal-triangle.tsx"
+          "target": "components/amicro/minimal-triangle.tsx"
         }
       ]
     },
@@ -1722,7 +1722,7 @@
         {
           "path": "registry/ui/loading/morph-dot-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/morph-dot-ring.tsx"
+          "target": "components/amicro/morph-dot-ring.tsx"
         }
       ]
     },
@@ -1739,7 +1739,7 @@
         {
           "path": "registry/ui/loading/morphing-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/morphing-bars.tsx"
+          "target": "components/amicro/morphing-bars.tsx"
         }
       ]
     },
@@ -1756,7 +1756,7 @@
         {
           "path": "registry/ui/loading/morphing-infinity.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/morphing-infinity.tsx"
+          "target": "components/amicro/morphing-infinity.tsx"
         }
       ]
     },
@@ -1773,7 +1773,7 @@
         {
           "path": "registry/ui/loading/morphing-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/morphing-ring.tsx"
+          "target": "components/amicro/morphing-ring.tsx"
         }
       ]
     },
@@ -1790,7 +1790,7 @@
         {
           "path": "registry/ui/loading/morphing-shape.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/morphing-shape.tsx"
+          "target": "components/amicro/morphing-shape.tsx"
         }
       ]
     },
@@ -1807,7 +1807,7 @@
         {
           "path": "registry/ui/loading/newtons-cradle.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/newtons-cradle.tsx"
+          "target": "components/amicro/newtons-cradle.tsx"
         }
       ]
     },
@@ -1824,7 +1824,7 @@
         {
           "path": "registry/ui/loading/offset-rings.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/offset-rings.tsx"
+          "target": "components/amicro/offset-rings.tsx"
         }
       ]
     },
@@ -1841,7 +1841,7 @@
         {
           "path": "registry/ui/loading/orbiting-circles.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/orbiting-circles.tsx"
+          "target": "components/amicro/orbiting-circles.tsx"
         }
       ]
     },
@@ -1858,7 +1858,7 @@
         {
           "path": "registry/ui/loading/orbiting-dot.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/orbiting-dot.tsx"
+          "target": "components/amicro/orbiting-dot.tsx"
         }
       ]
     },
@@ -1875,7 +1875,7 @@
         {
           "path": "registry/ui/loading/origami-shape.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/origami-shape.tsx"
+          "target": "components/amicro/origami-shape.tsx"
         }
       ]
     },
@@ -1892,7 +1892,7 @@
         {
           "path": "registry/ui/loading/pendulum.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pendulum.tsx"
+          "target": "components/amicro/pendulum.tsx"
         }
       ]
     },
@@ -1909,7 +1909,7 @@
         {
           "path": "registry/ui/loading/pulsating-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pulsating-dots.tsx"
+          "target": "components/amicro/pulsating-dots.tsx"
         }
       ]
     },
@@ -1926,7 +1926,7 @@
         {
           "path": "registry/ui/loading/pulse-dot.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pulse-dot.tsx"
+          "target": "components/amicro/pulse-dot.tsx"
         }
       ]
     },
@@ -1943,7 +1943,7 @@
         {
           "path": "registry/ui/loading/pulse-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pulse-dots.tsx"
+          "target": "components/amicro/pulse-dots.tsx"
         }
       ]
     },
@@ -1960,7 +1960,7 @@
         {
           "path": "registry/ui/loading/pulse-square.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pulse-square.tsx"
+          "target": "components/amicro/pulse-square.tsx"
         }
       ]
     },
@@ -1977,7 +1977,7 @@
         {
           "path": "registry/ui/loading/pumping-heart.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/pumping-heart.tsx"
+          "target": "components/amicro/pumping-heart.tsx"
         }
       ]
     },
@@ -1994,7 +1994,7 @@
         {
           "path": "registry/ui/loading/radar-sweep.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/radar-sweep.tsx"
+          "target": "components/amicro/radar-sweep.tsx"
         }
       ]
     },
@@ -2011,7 +2011,7 @@
         {
           "path": "registry/ui/loading/ring-sweep.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/ring-sweep.tsx"
+          "target": "components/amicro/ring-sweep.tsx"
         }
       ]
     },
@@ -2028,7 +2028,7 @@
         {
           "path": "registry/ui/loading/ripple-effect.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/ripple-effect.tsx"
+          "target": "components/amicro/ripple-effect.tsx"
         }
       ]
     },
@@ -2045,7 +2045,7 @@
         {
           "path": "registry/ui/loading/rotating-cross.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/rotating-cross.tsx"
+          "target": "components/amicro/rotating-cross.tsx"
         }
       ]
     },
@@ -2062,7 +2062,7 @@
         {
           "path": "registry/ui/loading/rotating-triangle.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/rotating-triangle.tsx"
+          "target": "components/amicro/rotating-triangle.tsx"
         }
       ]
     },
@@ -2079,7 +2079,7 @@
         {
           "path": "registry/ui/loading/shape-shift-grid.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/shape-shift-grid.tsx"
+          "target": "components/amicro/shape-shift-grid.tsx"
         }
       ]
     },
@@ -2096,7 +2096,7 @@
         {
           "path": "registry/ui/loading/shimmer-line.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/shimmer-line.tsx"
+          "target": "components/amicro/shimmer-line.tsx"
         }
       ]
     },
@@ -2113,7 +2113,7 @@
         {
           "path": "registry/ui/loading/siri-wave.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/siri-wave.tsx"
+          "target": "components/amicro/siri-wave.tsx"
         }
       ]
     },
@@ -2130,7 +2130,7 @@
         {
           "path": "registry/ui/loading/skeleton-loader.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/skeleton-loader.tsx"
+          "target": "components/amicro/skeleton-loader.tsx"
         }
       ]
     },
@@ -2147,7 +2147,7 @@
         {
           "path": "registry/ui/loading/sliding-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/sliding-bars.tsx"
+          "target": "components/amicro/sliding-bars.tsx"
         }
       ]
     },
@@ -2164,7 +2164,7 @@
         {
           "path": "registry/ui/loading/smooth-dot-shift.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/smooth-dot-shift.tsx"
+          "target": "components/amicro/smooth-dot-shift.tsx"
         }
       ]
     },
@@ -2181,7 +2181,7 @@
         {
           "path": "registry/ui/loading/smooth-ring.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/smooth-ring.tsx"
+          "target": "components/amicro/smooth-ring.tsx"
         }
       ]
     },
@@ -2198,7 +2198,7 @@
         {
           "path": "registry/ui/loading/smooth-rounded-square.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/smooth-rounded-square.tsx"
+          "target": "components/amicro/smooth-rounded-square.tsx"
         }
       ]
     },
@@ -2215,7 +2215,7 @@
         {
           "path": "registry/ui/loading/spinning-squares.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spinning-squares.tsx"
+          "target": "components/amicro/spinning-squares.tsx"
         }
       ]
     },
@@ -2232,7 +2232,7 @@
         {
           "path": "registry/ui/loading/spiral-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spiral-spinner.tsx"
+          "target": "components/amicro/spiral-spinner.tsx"
         }
       ]
     },
@@ -2249,7 +2249,7 @@
         {
           "path": "registry/ui/loading/spring-bars.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spring-bars.tsx"
+          "target": "components/amicro/spring-bars.tsx"
         }
       ]
     },
@@ -2266,7 +2266,7 @@
         {
           "path": "registry/ui/loading/spring-dot-matrix.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spring-dot-matrix.tsx"
+          "target": "components/amicro/spring-dot-matrix.tsx"
         }
       ]
     },
@@ -2283,7 +2283,7 @@
         {
           "path": "registry/ui/loading/spring-hexagon.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spring-hexagon.tsx"
+          "target": "components/amicro/spring-hexagon.tsx"
         }
       ]
     },
@@ -2300,7 +2300,7 @@
         {
           "path": "registry/ui/loading/spring-ring-expand.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spring-ring-expand.tsx"
+          "target": "components/amicro/spring-ring-expand.tsx"
         }
       ]
     },
@@ -2317,7 +2317,7 @@
         {
           "path": "registry/ui/loading/spring-text-pop.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/spring-text-pop.tsx"
+          "target": "components/amicro/spring-text-pop.tsx"
         }
       ]
     },
@@ -2334,7 +2334,7 @@
         {
           "path": "registry/ui/loading/square-accordion.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/square-accordion.tsx"
+          "target": "components/amicro/square-accordion.tsx"
         }
       ]
     },
@@ -2351,7 +2351,7 @@
         {
           "path": "registry/ui/loading/square-grid.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/square-grid.tsx"
+          "target": "components/amicro/square-grid.tsx"
         }
       ]
     },
@@ -2368,7 +2368,7 @@
         {
           "path": "registry/ui/loading/square-snake.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/square-snake.tsx"
+          "target": "components/amicro/square-snake.tsx"
         }
       ]
     },
@@ -2385,7 +2385,7 @@
         {
           "path": "registry/ui/loading/square-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/square-spinner.tsx"
+          "target": "components/amicro/square-spinner.tsx"
         }
       ]
     },
@@ -2402,7 +2402,7 @@
         {
           "path": "registry/ui/loading/stacked-bar-pulse.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/stacked-bar-pulse.tsx"
+          "target": "components/amicro/stacked-bar-pulse.tsx"
         }
       ]
     },
@@ -2419,7 +2419,7 @@
         {
           "path": "registry/ui/loading/swapping-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/swapping-dots.tsx"
+          "target": "components/amicro/swapping-dots.tsx"
         }
       ]
     },
@@ -2436,7 +2436,7 @@
         {
           "path": "registry/ui/loading/swirling-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/swirling-spinner.tsx"
+          "target": "components/amicro/swirling-spinner.tsx"
         }
       ]
     },
@@ -2453,7 +2453,7 @@
         {
           "path": "registry/ui/loading/symmetric-wave.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/symmetric-wave.tsx"
+          "target": "components/amicro/symmetric-wave.tsx"
         }
       ]
     },
@@ -2470,7 +2470,7 @@
         {
           "path": "registry/ui/loading/terminal-loader.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/terminal-loader.tsx"
+          "target": "components/amicro/terminal-loader.tsx"
         }
       ]
     },
@@ -2487,7 +2487,7 @@
         {
           "path": "registry/ui/loading/text-blink.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/text-blink.tsx"
+          "target": "components/amicro/text-blink.tsx"
         }
       ]
     },
@@ -2504,7 +2504,7 @@
         {
           "path": "registry/ui/loading/text-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/text-dots.tsx"
+          "target": "components/amicro/text-dots.tsx"
         }
       ]
     },
@@ -2521,7 +2521,7 @@
         {
           "path": "registry/ui/loading/text-morph.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/text-morph.tsx"
+          "target": "components/amicro/text-morph.tsx"
         }
       ]
     },
@@ -2538,7 +2538,7 @@
         {
           "path": "registry/ui/loading/text-shimmer-wave.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/text-shimmer-wave.tsx"
+          "target": "components/amicro/text-shimmer-wave.tsx"
         }
       ]
     },
@@ -2555,7 +2555,7 @@
         {
           "path": "registry/ui/loading/text-shimmer.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/text-shimmer.tsx"
+          "target": "components/amicro/text-shimmer.tsx"
         }
       ]
     },
@@ -2572,7 +2572,7 @@
         {
           "path": "registry/ui/loading/trailing-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/trailing-dots.tsx"
+          "target": "components/amicro/trailing-dots.tsx"
         }
       ]
     },
@@ -2589,7 +2589,7 @@
         {
           "path": "registry/ui/loading/triple-dot-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/triple-dot-spinner.tsx"
+          "target": "components/amicro/triple-dot-spinner.tsx"
         }
       ]
     },
@@ -2606,7 +2606,7 @@
         {
           "path": "registry/ui/loading/twin-orbit.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/twin-orbit.tsx"
+          "target": "components/amicro/twin-orbit.tsx"
         }
       ]
     },
@@ -2623,7 +2623,7 @@
         {
           "path": "registry/ui/loading/typing-indicator.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/typing-indicator.tsx"
+          "target": "components/amicro/typing-indicator.tsx"
         }
       ]
     },
@@ -2640,7 +2640,7 @@
         {
           "path": "registry/ui/loading/typing.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/typing.tsx"
+          "target": "components/amicro/typing.tsx"
         }
       ]
     },
@@ -2657,7 +2657,7 @@
         {
           "path": "registry/ui/loading/wandering-cube.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/wandering-cube.tsx"
+          "target": "components/amicro/wandering-cube.tsx"
         }
       ]
     },
@@ -2674,7 +2674,7 @@
         {
           "path": "registry/ui/loading/watch-spinner.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/watch-spinner.tsx"
+          "target": "components/amicro/watch-spinner.tsx"
         }
       ]
     },
@@ -2691,7 +2691,7 @@
         {
           "path": "registry/ui/loading/wave-dots.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/wave-dots.tsx"
+          "target": "components/amicro/wave-dots.tsx"
         }
       ]
     },
@@ -2708,7 +2708,7 @@
         {
           "path": "registry/ui/loading/wave-physics-loader.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/wave-physics-loader.tsx"
+          "target": "components/amicro/wave-physics-loader.tsx"
         }
       ]
     },
@@ -2725,7 +2725,7 @@
         {
           "path": "registry/ui/loading/waveform-loader.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/waveform-loader.tsx"
+          "target": "components/amicro/waveform-loader.tsx"
         }
       ]
     },
@@ -2742,7 +2742,132 @@
         {
           "path": "registry/ui/loading/zig-zag-pulse.tsx",
           "type": "registry:ui",
-          "target": "@components/amicro/zig-zag-pulse.tsx"
+          "target": "components/amicro/zig-zag-pulse.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-transition",
+      "type": "registry:ui",
+      "title": "Page Transition",
+      "description": "Dynamic fullscreen page transition animation.",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/transitions/page-transition.tsx",
+          "type": "registry:ui",
+          "target": "components/amicro/page-transition.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-carousel",
+      "type": "registry:block",
+      "title": "Interactive 3D Carousel",
+      "description": "An interactive arc-based 3D motion carousel featuring smooth dot indicators and dynamic prev/next controls.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/cards/CardCarousel.tsx",
+          "type": "registry:component",
+          "target": "components/amicro/CardCarousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card-cover-flow",
+      "type": "registry:block",
+      "title": "CoverFlow Carousel",
+      "description": "A premium 3D CoverFlow carousel displaying cards along a perspective path.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/cards/CardCoverFlow.tsx",
+          "type": "registry:component",
+          "target": "components/amicro/CardCoverFlow.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dither-donut-chart",
+      "type": "registry:block",
+      "title": "Dither Donut Chart",
+      "description": "Interactive pixelated dither donut chart with real-time spring physics.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/dither-charts/DitherDonutChart.tsx",
+          "type": "registry:component",
+          "target": "components/amicro/DitherDonutChart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dither-growth-chart",
+      "type": "registry:block",
+      "title": "Dither Growth Chart",
+      "description": "60fps canvas growth line chart with pixel dither fill matrix.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/dither-charts/DitherGrowthChart.tsx",
+          "type": "registry:component",
+          "target": "components/amicro/DitherGrowthChart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "uptime-chart",
+      "type": "registry:block",
+      "title": "Uptime Dither Bar Chart",
+      "description": "Continuous uptime bar chart with dithered matrix animation.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/dither-charts/UptimeChart.tsx",
+          "type": "registry:component",
+          "target": "components/amicro/UptimeChart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "activity-heatmap",
+      "type": "registry:block",
+      "title": "Activity Dither Heatmap",
+      "description": "GitHub-style activity heatmap with interactive dither dots.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/dither-charts/ActivityHeatmap.tsx",
+          "type": "registry:component",
+          "target": "components/amicro/ActivityHeatmap.tsx"
         }
       ]
     }
