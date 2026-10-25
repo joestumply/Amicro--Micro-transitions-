@@ -18,7 +18,7 @@ export const CardStampArc = React.memo(function CardStampArc({
   spread = 180,
   yOffset = 40,
   isColorful = false,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   className = '',
   hovered,
@@ -79,7 +79,7 @@ export const CardStampArc = React.memo(function CardStampArc({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

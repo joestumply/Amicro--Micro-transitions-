@@ -24,7 +24,7 @@ export function ServerGauge({ theme = 'dark', compact = false }: { theme?: 'dark
   const { canvasRef, rect, isVisible, reducedMotion } = useCanvasSetup();
   const metric = METRICS[metricIndex];
 
-  const valSpring = useSpring(metric.base, { stiffness: 120, damping: 20 });
+  const valSpring = useSpring(metric.base, { stiffness: 220, damping: 28 });
 
   useEffect(() => {
     valSpring.set(metric.base);

@@ -28,7 +28,7 @@ export default function SlideArrowButton() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -10 }}
-            transition={{ type: "spring", stiffness: 600, damping: 25 }}
+            transition={{ type: "spring", stiffness: 600, damping: 28 }}
             className="flex items-center shrink-0 mr-2.5"
           >
             <${icon1Name} className="w-4 h-4" />
@@ -43,7 +43,7 @@ export default function SlideArrowButton() {
             initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
-            transition={{ type: "spring", stiffness: 600, damping: 25 }}
+            transition={{ type: "spring", stiffness: 600, damping: 28 }}
             className="flex items-center shrink-0 ml-2.5"
           >
             <${icon2Name} className="w-4 h-4" />
@@ -78,7 +78,7 @@ export default function SparkleButton() {
               initial={{ y: -15, opacity: 0, scale: 0.8 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -15, opacity: 0, scale: 0.8 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25 }}
+              transition={{ type: "spring", stiffness: 600, damping: 28 }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <${icon1Name} className="w-4 h-4" />
@@ -89,7 +89,7 @@ export default function SparkleButton() {
               initial={{ y: 15, opacity: 0, scale: 0.8 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 15, opacity: 0, scale: 0.8 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25 }}
+              transition={{ type: "spring", stiffness: 600, damping: 28 }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <${icon2Name} className="w-4 h-4 text-yellow-400" />
@@ -97,7 +97,7 @@ export default function SparkleButton() {
                 initial={{ opacity: 0, scale: 0, rotate: -45, y: 10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
                 exit={{ opacity: 0, scale: 0, rotate: 45, y: 10 }}
-                transition={{ type: "spring", stiffness: 600, damping: 25, delay: 0.05 }}
+                transition={{ type: "spring", stiffness: 600, damping: 28, delay: 0.05 }}
                 className="absolute -top-3 -right-2"
               >
                 <svg className="w-2.5 h-2.5 text-yellow-200" viewBox="0 0 24 24" fill="currentColor">
@@ -137,7 +137,7 @@ export default function MorphButton() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25 }}
+              transition={{ type: "spring", stiffness: 600, damping: 28 }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <${icon1Name} className="w-4 h-4" />
@@ -148,7 +148,7 @@ export default function MorphButton() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25 }}
+              transition={{ type: "spring", stiffness: 600, damping: 28 }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <${icon2Name} className="w-4 h-4" />
@@ -178,7 +178,7 @@ export default function ColorMorphButton() {
       className="relative flex items-center justify-center text-white h-[36px] px-6 rounded-[40px] bg-white/[0.04] hover:bg-white/[0.06] border border-white/5 cursor-pointer transition-colors duration-150"
     >
       <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
-        <${icon1Name} className={\`w-4 h-4 transition-colors duration-300 \${isHovered ? 'text-blue-400 fill-blue-400' : 'text-neutral-300'}\`} />
+        <${icon1Name} className={\`w-4 h-4 transition-colors duration-250 \${isHovered ? 'text-blue-400 fill-blue-400' : 'text-neutral-300'}\`} />
       </div>
       <span className="font-medium tracking-tight text-[13px] ml-2.5">${button.label}</span>
     </motion.button>
@@ -204,7 +204,7 @@ export default function PulseButton() {
       <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
         <motion.div
           animate={{ scale: isHovered ? [1, 1.25, 1] : 1 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
         >
           <${icon1Name} className="w-4 h-4" />
         </motion.div>
@@ -233,7 +233,7 @@ export default function RotateButton() {
       <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
         <motion.div
           animate={{ rotate: isHovered ? 180 : 0 }}
-          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          transition={{ type: "spring", stiffness: 400, damping: 28 }}
         >
           <${icon1Name} className="w-4 h-4" />
         </motion.div>
@@ -265,7 +265,7 @@ export default function ShakeButton() {
             y: isHovered ? [0, -2, 0, -2, 0] : 0,
             rotate: isHovered ? [0, -10, 10, -10, 0] : 0
           }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.25 }}
         >
           <${icon1Name} className="w-4 h-4 text-red-400" />
         </motion.div>
@@ -299,7 +299,7 @@ export default function RingButton() {
               initial={{ rotate: -15, scale: 0.8, opacity: 0 }}
               animate={{ rotate: 0, scale: 1, opacity: 1 }}
               exit={{ rotate: 15, scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25 }}
+              transition={{ type: "spring", stiffness: 600, damping: 28 }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <${icon1Name} className="w-4 h-4" />
@@ -310,14 +310,14 @@ export default function RingButton() {
               initial={{ rotate: -15, scale: 0.8, opacity: 0 }}
               animate={{ rotate: 0, scale: 1, opacity: 1 }}
               exit={{ rotate: 15, scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25 }}
+              transition={{ type: "spring", stiffness: 600, damping: 28 }}
               className="absolute inset-0 flex items-center justify-center"
             >
               <${icon2Name} className="w-4 h-4 text-orange-400" />
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 600, damping: 15, delay: 0.1 }}
+                transition={{ type: "spring", stiffness: 600, damping: 28, delay: 0.1 }}
                 className="absolute top-0 right-0 w-1.5 h-1.5 bg-red-500 rounded-full"
               />
             </motion.div>
@@ -373,14 +373,14 @@ export default function TextRevealButton() {
       className="relative flex items-center justify-center text-white h-[36px] px-6 rounded-[40px] bg-white/[0.04] hover:bg-white/[0.06] border border-white/5 cursor-pointer transition-colors duration-150"
     >
       <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0 mr-2.5">
-        <motion.div animate={{ rotate: isHovered ? 45 : 0 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+        <motion.div animate={{ rotate: isHovered ? 45 : 0 }} transition={{ type: "spring", stiffness: 400, damping: 28 }}>
           <${icon1Name} className="w-4 h-4" />
         </motion.div>
       </div>
       <div className="relative h-[18px] overflow-hidden">
         <motion.div
           animate={{ y: isHovered ? -18 : 0 }}
-          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          transition={{ type: "spring", stiffness: 400, damping: 28 }}
           className="flex flex-col"
         >
           <span className="block h-[18px] leading-[18px] font-medium tracking-tight text-[13px] whitespace-nowrap text-white">
@@ -453,7 +453,7 @@ export default function ExpandRingButton() {
       <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
         <motion.div
           animate={{ scale: isHovered ? 1.1 : 1 }}
-          transition={{ type: "spring", stiffness: 400, damping: 20 }}
+          transition={{ type: "spring", stiffness: 400, damping: 28 }}
         >
           <${icon1Name} className="w-4 h-4" />
         </motion.div>
@@ -465,7 +465,7 @@ export default function ExpandRingButton() {
             initial={{ opacity: 1, scale: 1 }}
             animate={{ opacity: 0, scale: 1.15 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             className="absolute inset-0 rounded-[40px] pointer-events-none border border-white/20"
           />
         )}
@@ -518,7 +518,7 @@ export default function FocusBlur({
             href={item.href || '#'}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            className="relative font-semibold text-lg sm:text-2xl no-underline transition-all duration-300 select-none outline-none"
+            className="relative font-semibold text-lg sm:text-2xl no-underline transition-all duration-250 select-none outline-none"
             style={{
               filter: isInactive ? \`blur(\${blurAmount}px)\` : 'none',
               opacity: isInactive ? opacityAmount : 1,
@@ -534,7 +534,7 @@ export default function FocusBlur({
                     initial={{ opacity: 0, scale: 1.3 }}
                     animate={{ opacity: 1, scale: 1.1 }}
                     exit={{ opacity: 0, scale: 1.3 }}
-                    transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 28 }}
                     className="absolute inset-0 border-2 border-dashed border-neutral-700 rounded-lg pointer-events-none z-0"
                     style={{ margin: '-4px -8px' }}
                   />
@@ -575,7 +575,7 @@ export function ThemeToggle() {
       <motion.div
         initial={false}
         animate={{ rotate: theme === 'dark' ? 0 : 180 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.25 }}
       >
         {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
       </motion.div>
@@ -605,7 +605,7 @@ export default function CardArc5({
   angle = 30,
   gap = 70,
   yOffset = 10,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-800',
   className = ''
@@ -645,7 +645,7 @@ export default function CardArc5({
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 20,
+              damping: 23,
               mass: 0.8,
               duration
             }}
@@ -680,7 +680,7 @@ export default function CardArc7({
   angle = 45,
   gap = 110,
   yOffset = 30,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-800',
   className = ''
@@ -721,7 +721,7 @@ export default function CardArc7({
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 20,
+              damping: 23,
               mass: 0.8,
               duration
             }}
@@ -756,7 +756,7 @@ export default function CardLongArc5({
   angle = 15,
   gap = 140,
   yOffset = 20,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-800',
   className = ''
@@ -796,7 +796,7 @@ export default function CardLongArc5({
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 20,
+              damping: 23,
               mass: 0.8,
               duration
             }}
@@ -827,7 +827,7 @@ interface CardLinearSpreadProps {
 
 export default function CardLinearSpread({
   gap = 90,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-800',
   className = ''
@@ -856,7 +856,7 @@ export default function CardLinearSpread({
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 20,
+              damping: 23,
               mass: 0.8,
               duration
             }}
@@ -885,7 +885,7 @@ interface CardCornerFanProps {
 
 export default function CardCornerFan({
   angle = 40,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-800',
   className = ''
@@ -915,7 +915,7 @@ export default function CardCornerFan({
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 20,
+              damping: 23,
               mass: 0.8,
               duration
             }}
@@ -951,7 +951,7 @@ export default function CardStampArc({
   spread = 180,
   yOffset = 40,
   isColorful = false,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   className = ''
 }: CardStampArcProps) {
@@ -1018,7 +1018,7 @@ export default function CardStampArc({
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 20,
+              damping: 23,
               mass: 0.8,
               duration
             }}
@@ -1075,7 +1075,7 @@ export default function CardCascadeStagger({
               rotate: targetRotate,
               scale: isHovered ? (dist === 0 ? 1.05 : 0.98) : 1
             }}
-            transition={{ type: "spring", stiffness: 200, damping: 22, mass: 0.9 }}
+            transition={{ type: "spring", stiffness: 200, damping: 25, mass: 0.9 }}
             style={{ zIndex: 5 - Math.abs(dist) }}
             className={\`absolute inset-0 rounded-2xl shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)] border border-white/5 \${cardClassName}\`}
           />
@@ -1129,7 +1129,7 @@ export default function CardScatterSpread({
               rotate: targetRotate,
               scale: isHovered ? (i === 2 ? 1.05 : 0.98) : 1
             }}
-            transition={{ type: "spring", stiffness: 180, damping: 20, mass: 0.8 }}
+            transition={{ type: "spring", stiffness: 180, damping: 23, mass: 0.8 }}
             style={{ zIndex: 5 - Math.abs(i - 2) }}
             className={\`absolute inset-0 rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] border border-white/5 \${cardClassName}\`}
           />
@@ -1181,7 +1181,7 @@ export default function CardWheelFan({
               y: targetY,
               scale: isHovered ? (dist === 0 ? 1.05 : 0.98) : 1
             }}
-            transition={{ type: "spring", stiffness: 180, damping: 20, mass: 0.8 }}
+            transition={{ type: "spring", stiffness: 180, damping: 23, mass: 0.8 }}
             style={{
               zIndex: 5 - Math.abs(dist),
               originX: 0.5,
@@ -1265,7 +1265,7 @@ export default function CardCarousel({
         <motion.div 
           className="flex w-fit items-center"
           animate={{ x: -activeIndex * slideWidth }}
-          transition={{ type: 'spring', bounce: 0.1, duration: 0.8 }}
+          transition={{ type: 'spring', bounce: 0.1, duration: 0.25 }}
         >
           {images.map((item, i) => {
             const isActive = activeIndex === i;
@@ -1285,10 +1285,10 @@ export default function CardCarousel({
                   scale: targetScale, 
                   y: targetY 
                 }}
-                transition={{ type: 'spring', bounce: 0.2, duration: 0.8 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
               >
                 <div 
-                  className={\`text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-300 \${isActive ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-75 text-neutral-400'}\`} 
+                  className={\`text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-250 \${isActive ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-75 text-neutral-400'}\`} 
                 >
                   {item.title}
                 </div>
@@ -1315,7 +1315,7 @@ export default function CardCarousel({
             <div 
               key={i} 
               onClick={(e) => toSlide(e, i)}
-              className={\`rounded-full cursor-pointer h-1 transition-all duration-300 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
+              className={\`rounded-full cursor-pointer h-1 transition-all duration-250 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
             </div>
           ))}
         </div>
@@ -1402,7 +1402,7 @@ export default function CardCoverFlow({
                 scale: isActive ? 1.1 : 1 - (absOffset * 0.08),
                 opacity: absOffset > 2 ? 0 : 1 - (absOffset * 0.25)
               }}
-              transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 28 }}
               style={{ zIndex: 100 - absOffset }}
               onClick={(e) => toSlide(e, i)}
             >
@@ -1432,7 +1432,7 @@ export default function CardCoverFlow({
             <div 
               key={i} 
               onClick={(e) => toSlide(e, i)}
-              className={\`rounded-full cursor-pointer h-1 transition-all duration-300 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
+              className={\`rounded-full cursor-pointer h-1 transition-all duration-250 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
             </div>
           ))}
         </div>
@@ -1587,7 +1587,7 @@ export default function CardTimeMachine({
                   animate={{
                     scaleX: hoveredIndex === null ? 1 : (isSelected ? 1.4 : (Math.abs(index - hoveredIndex) < 0.5 ? 1.25 : 1)),
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
               </button>
             );
@@ -1610,7 +1610,7 @@ export default function CardTimeMachine({
                     scaleX: hoveredIndex === null ? 1 : (isHoveringNear ? 1.15 : 1),
                     opacity: hoveredIndex === null ? 0.3 : (isHoveringNear ? 0.5 : 0.3)
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
               </div>
             );
@@ -1693,7 +1693,7 @@ export default function CardCarousel({
         <motion.div 
           className="flex w-fit items-center"
           animate={{ x: -activeIndex * slideWidth }}
-          transition={{ type: 'spring', bounce: 0.1, duration: 0.8 }}
+          transition={{ type: 'spring', bounce: 0.1, duration: 0.25 }}
         >
           {images.map((item, i) => {
             const isActive = activeIndex === i;
@@ -1713,10 +1713,10 @@ export default function CardCarousel({
                   scale: targetScale, 
                   y: targetY 
                 }}
-                transition={{ type: 'spring', bounce: 0.2, duration: 0.8 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
               >
                 <div 
-                  className={\`text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-300 \${isActive ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-75 text-neutral-400'}\`} 
+                  className={\`text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-250 \${isActive ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-75 text-neutral-400'}\`} 
                 >
                   {isMonochrome ? \`Card \${i + 1}\` : item.title}
                 </div>
@@ -1752,7 +1752,7 @@ export default function CardCarousel({
             <div 
               key={i} 
               onClick={(e) => toSlide(e, i)}
-              className={\`rounded-full cursor-pointer h-1 transition-all duration-300 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
+              className={\`rounded-full cursor-pointer h-1 transition-all duration-250 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
             </div>
           ))}
         </div>
@@ -1841,7 +1841,7 @@ export default function CardCoverFlow({
                 scale: isActive ? 1.1 : 1 - (absOffset * 0.08),
                 opacity: absOffset > 2 ? 0 : 1 - (absOffset * 0.25)
               }}
-              transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 28 }}
               style={{ zIndex: 100 - absOffset }}
               onClick={(e) => toSlide(e, i)}
             >
@@ -1879,7 +1879,7 @@ export default function CardCoverFlow({
             <div 
               key={i} 
               onClick={(e) => toSlide(e, i)}
-              className={\`rounded-full cursor-pointer h-1 transition-all duration-300 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
+              className={\`rounded-full cursor-pointer h-1 transition-all duration-250 \${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}\`}>
             </div>
           ))}
         </div>
@@ -2044,7 +2044,7 @@ export default function CardTimeMachine({
                   animate={{
                     scaleX: hoveredIndex === null ? 1 : (isSelected ? 1.4 : (Math.abs(index - hoveredIndex) < 0.5 ? 1.25 : 1)),
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
               </button>
             );
@@ -2067,7 +2067,7 @@ export default function CardTimeMachine({
                     scaleX: hoveredIndex === null ? 1 : (isHoveringNear ? 1.15 : 1),
                     opacity: hoveredIndex === null ? 0.3 : (isHoveringNear ? 0.5 : 0.3)
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
               </div>
             );

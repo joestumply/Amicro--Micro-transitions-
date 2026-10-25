@@ -18,7 +18,7 @@ export function Area1({
 
   return (
     <div 
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 ${
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 ${
         theme === 'dark' ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       } ${className}`}
       onMouseEnter={trigger === "hover" ? () => setHoverKey(k => k + 1) : undefined}
@@ -36,7 +36,7 @@ export function Area1({
           100% { height: 10px; }
         }
         .cloth-anim {
-          animation: cloth_open 0.6s ease-in-out 0.2s both, cloth_close 0.6s ease-in-out 1.4s forwards;
+          animation: cloth_open 0.28s ease-in-out 0.09s both, cloth_close 0.28s ease-in-out 0.65s forwards;
         }
       `}</style>
       <div className="absolute inset-0 flex justify-center items-center area1-scene">

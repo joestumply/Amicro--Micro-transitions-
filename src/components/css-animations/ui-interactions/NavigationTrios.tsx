@@ -24,7 +24,7 @@ export function FilterTagPill({ theme = 'dark' }: { theme?: 'dark' | 'light' }) 
           {selected === idx && (
             <motion.div
               layoutId="filter-tag-pill"
-              transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+              transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
               className={`absolute inset-0 rounded-xl ${theme === 'dark' ? 'bg-blue-600' : 'bg-blue-600 text-white'}`}
             />
           )}

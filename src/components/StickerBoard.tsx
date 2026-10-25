@@ -239,7 +239,7 @@ export const StickerBoard: React.FC<StickerBoardProps> = ({
                   zIndex: isActive ? 29 : zIndexVal,
                   transition: isActive
                     ? 'none'
-                    : 'transform 320ms cubic-bezier(0.16, 1, 0.3, 1)',
+                    : 'transform 250ms cubic-bezier(0.16, 1, 0.3, 1)',
                 }}
                 className="absolute cursor-grab active:cursor-grabbing select-none will-change-transform"
               >

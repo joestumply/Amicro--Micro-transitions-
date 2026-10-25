@@ -13,7 +13,7 @@ interface CardCornerFanProps {
 
 export const CardCornerFan = React.memo(function CardCornerFan({
   angle = 40, // Total rotation fan span
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-400 dark:bg-neutral-800',
   className = '',
@@ -40,7 +40,7 @@ export const CardCornerFan = React.memo(function CardCornerFan({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

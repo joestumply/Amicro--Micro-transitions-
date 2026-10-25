@@ -25,7 +25,7 @@ export function StorageUsageChart({ theme = 'dark', compact = false }: { theme?:
   const percentage = (view.used / view.total) * 100;
 
   const { canvasRef, rect, isVisible, reducedMotion } = useCanvasSetup();
-  const widthSpring = useSpring(percentage, { stiffness: 150, damping: 20 });
+  const widthSpring = useSpring(percentage, { stiffness: 220, damping: 28 });
 
   useEffect(() => {
     widthSpring.set(percentage);

@@ -43,12 +43,12 @@ export function SpotlightCard({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden will-change-transform ${className}`}
+      className={`relative overflow-hidden ${className}`}
       {...props}
     >
       {/* Dynamic Cursor Spotlight Radial Sheen (Compositor accelerated via CSS Variables) */}
       <div
-        className="pointer-events-none absolute -inset-px transition-opacity duration-300 rounded-[inherit]"
+        className="pointer-events-none absolute -inset-px transition-opacity duration-250 rounded-[inherit]"
         style={{
           opacity: 'var(--spotlight-opacity, 0)',
           background: `radial-gradient(400px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), ${activeSpotlight}, transparent 70%)`,

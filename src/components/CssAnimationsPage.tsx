@@ -306,7 +306,7 @@ export function CssAnimationsPage({
   };
 
   return (
-    <div className={`w-full max-w-[1600px] mx-auto ${embedded ? 'px-0 py-1' : 'px-4 sm:px-8 lg:px-12 2xl:px-16 py-5 sm:py-6 2xl:py-8'} flex flex-col gap-6 font-[-apple-system,BlinkMacSystemFont,"SF_Pro_Display","SF_Pro_Text","Helvetica_Neue",sans-serif] transition-colors duration-300 ${
+    <div className={`w-full max-w-[1600px] mx-auto ${embedded ? 'px-0 py-1' : 'px-4 sm:px-8 lg:px-12 2xl:px-16 py-5 sm:py-6 2xl:py-8'} flex flex-col gap-6 font-[-apple-system,BlinkMacSystemFont,"SF_Pro_Display","SF_Pro_Text","Helvetica_Neue",sans-serif] transition-colors duration-250 ${
       theme === 'dark' ? 'text-[#f5f5f7]' : 'text-[#1d1d1f]'
     }`}>
       

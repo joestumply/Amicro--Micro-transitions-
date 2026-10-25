@@ -385,14 +385,14 @@ export function MonoChartsPage({
           {/* Hero Header matching main page simplicity with decreased top margin */}
           <div className="mt-1 sm:mt-2 mb-7 sm:mb-9 text-center w-full max-w-[1360px] 2xl:max-w-[1480px] mx-auto px-4 sm:px-8 flex flex-col items-center">
             {/* Hero Heading */}
-            <h1 className={`text-fluid-hero font-bold mb-3 sm:mb-4 font-sans max-w-4xl 2xl:max-w-5xl mx-auto transition-colors duration-300 ${
+            <h1 className={`text-fluid-hero font-bold mb-3 sm:mb-4 font-sans max-w-4xl 2xl:max-w-5xl mx-auto transition-colors duration-250 ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
               Mono Charts.
             </h1>
 
             {/* Hero Subtitle */}
-            <p className={`text-fluid-sub max-w-[620px] 2xl:max-w-[720px] mx-auto font-normal transition-colors duration-300 ${
+            <p className={`text-fluid-sub max-w-[620px] 2xl:max-w-[720px] mx-auto font-normal transition-colors duration-250 ${
               isDark ? 'text-neutral-400' : 'text-neutral-600'
             }`}>
               A unified collection of 30 single-ink chart visualizers built with rounded geometry and minimalist typography.
@@ -427,7 +427,7 @@ export function MonoChartsPage({
                     initial: { rotate: 0, scale: 1 },
                     hover: { rotate: -12, scale: 1.15 }
                   }}
-                  transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 500, damping: 28 }}
                   className="flex items-center shrink-0"
                 >
                   <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 block">
@@ -469,7 +469,7 @@ export function MonoChartsPage({
                     initial: { rotate: 0, scale: 1 },
                     hover: { rotate: 8, scale: 1.12 }
                   }}
-                  transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 500, damping: 28 }}
                   className="flex items-center shrink-0 mr-1.5"
                 >
                   <svg viewBox="0 0 24 24" className="w-[15px] h-[15px] block shrink-0" fill="currentColor" aria-hidden="true">
@@ -514,7 +514,7 @@ export function MonoChartsPage({
                   className="block focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 rounded-3xl cursor-pointer text-inherit no-underline"
                 >
                   {/* Live Interactive Chart Stage - Fits the whole card seamlessly */}
-                  <div className="w-full rounded-3xl overflow-hidden transition-all duration-300">
+                  <div className="w-full rounded-3xl overflow-hidden transition-all duration-250">
                     <InViewRender>
                       <div className="w-full">
                         {item.component}

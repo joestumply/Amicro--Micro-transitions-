@@ -22,14 +22,14 @@ export function Tsumiki({
     if (onCovered) {
       const timeout = setTimeout(() => {
         onCovered();
-      }, 1400);
+      }, 490);
       return () => clearTimeout(timeout);
     }
   }, [activeKey, onCovered]);
 
   return (
     <div 
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 ${
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 ${
         theme === 'dark' ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       } ${className}`}
       onMouseEnter={trigger === "hover" ? () => setHoverKey(k => k + 1) : undefined}
@@ -65,11 +65,11 @@ export function Tsumiki({
           100% { transform: translateY(400%) rotate(-20deg); opacity: 0; }
         }
 
-        .bar-0 { animation: tsumiki_bounce_right 0.8s ease-in-out 0.6s both, tsumiki_fall_right 0.5s cubic-bezier(0.74, 0.03, 1, 1) 2.0s forwards; }
-        .bar-1 { animation: tsumiki_bounce_left 0.8s ease-in-out 0.45s both, tsumiki_fall_left 0.5s cubic-bezier(0.74, 0.03, 1, 1) 1.85s forwards; }
-        .bar-2 { animation: tsumiki_bounce_right 0.8s ease-in-out 0.3s both, tsumiki_fall_right 0.5s cubic-bezier(0.74, 0.03, 1, 1) 1.7s forwards; }
-        .bar-3 { animation: tsumiki_bounce_left 0.8s ease-in-out 0.15s both, tsumiki_fall_left 0.5s cubic-bezier(0.74, 0.03, 1, 1) 1.55s forwards; }
-        .bar-4 { animation: tsumiki_bounce_right 0.8s ease-in-out 0s both, tsumiki_fall_right 0.5s cubic-bezier(0.74, 0.03, 1, 1) 1.4s forwards; }
+        .bar-0 { animation: tsumiki_bounce_right 0.28s ease-in-out 0.21s both, tsumiki_fall_right 0.18s cubic-bezier(0.74, 0.03, 1, 1) 0.7s forwards; }
+        .bar-1 { animation: tsumiki_bounce_left 0.28s ease-in-out 0.16s both, tsumiki_fall_left 0.18s cubic-bezier(0.74, 0.03, 1, 1) 0.65s forwards; }
+        .bar-2 { animation: tsumiki_bounce_right 0.28s ease-in-out 0.11s both, tsumiki_fall_right 0.18s cubic-bezier(0.74, 0.03, 1, 1) 0.6s forwards; }
+        .bar-3 { animation: tsumiki_bounce_left 0.28s ease-in-out 0.05s both, tsumiki_fall_left 0.18s cubic-bezier(0.74, 0.03, 1, 1) 0.54s forwards; }
+        .bar-4 { animation: tsumiki_bounce_right 0.28s ease-in-out 0s both, tsumiki_fall_right 0.18s cubic-bezier(0.74, 0.03, 1, 1) 0.49s forwards; }
       `}</style>
       <div className="absolute inset-0 flex items-center justify-center tsumiki-scene">
         <div key={activeKey} className="absolute left-1/2 -translate-x-1/2 w-[70px] top-1/2 -translate-y-1/2 h-[75%]">

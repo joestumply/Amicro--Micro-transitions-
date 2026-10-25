@@ -69,7 +69,7 @@ export function MobileMenuOverlay({
               stiffness: 320,
               mass: 0.85,
             }}
-            className={`relative z-10 w-full max-h-[calc(100dvh-64px)] overflow-y-auto rounded-b-[28px] sm:rounded-b-[32px] border-b shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] select-none transition-colors duration-300 ${
+            className={`relative z-10 w-full max-h-[calc(100dvh-64px)] overflow-y-auto rounded-b-[28px] sm:rounded-b-[32px] border-b shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] select-none transition-colors duration-250 ${
               isDark
                 ? 'bg-[#08080a]/98 backdrop-blur-2xl border-white/[0.08] text-[#ededed]'
                 : 'bg-[#f8f9fa]/98 backdrop-blur-2xl border-black/[0.08] text-[#09090b]'
@@ -118,7 +118,7 @@ export function MobileMenuOverlay({
                         height: 'auto',
                         opacity: 1,
                         transition: {
-                          height: { duration: 0.32, ease: [0.16, 1, 0.3, 1] },
+                          height: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
                           opacity: { duration: 0.22, delay: 0.02 },
                         },
                       }}
@@ -281,7 +281,7 @@ export function MobileMenuOverlay({
                   type="button"
                   whileTap={{ scale: 0.98 }}
                   whileHover={{ scale: 1.01 }}
-                  transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 450, damping: 28 }}
                   onClick={() => {
                     triggerHaptic?.('medium');
                     onSelectNav('components');

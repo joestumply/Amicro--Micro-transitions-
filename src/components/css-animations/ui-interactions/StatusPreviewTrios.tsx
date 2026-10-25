@@ -19,7 +19,7 @@ export function SegmentedArcMeter({ theme = 'dark' }: { theme?: 'dark' | 'light'
       {segments.map((s) => (
         <div
           key={s}
-          className={`w-3 h-8 rounded-full transition-all duration-300 ${
+          className={`w-3 h-8 rounded-full transition-all duration-250 ${
             s <= level ? 'bg-blue-600 scale-y-100' : (theme === 'dark' ? 'bg-neutral-800 scale-y-75' : 'bg-neutral-200 scale-y-75')
           }`}
         />
@@ -50,7 +50,7 @@ export function SegmentedStepperDots({ theme = 'dark' }: { theme?: 'dark' | 'lig
           >
             <motion.div
               animate={{ width: isActive ? 24 : 8, backgroundColor: isActive ? '#0071e3' : (theme === 'dark' ? '#555' : '#ccc') }}
-              transition={{ type: 'spring', bounce: 0.25, duration: 0.35 }}
+              transition={{ type: 'spring', bounce: 0.25, duration: 0.25 }}
               className="h-2 rounded-full"
             />
           </button>

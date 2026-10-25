@@ -173,7 +173,7 @@ export function MinimalNavbar({
                   onMouseEnter={() => setHoveredNav(item.key)}
                   onClick={() => setActiveItem(item.key)}
                   whileTap={{ scale: 0.94 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 20 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 28 }}
                   className={`relative px-2.5 2xl:px-3.5 py-1.5 text-sm font-medium leading-none cursor-pointer transition-colors duration-150 border-0 bg-transparent no-underline select-none ${
                     isActive
                       ? onBack
@@ -227,7 +227,7 @@ export function MinimalNavbar({
               title="Amicro on GitHub"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 28 }}
               className={`group inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-8.5 px-2.5 sm:px-3 rounded-full text-[12px] sm:text-[12.5px] font-medium no-underline transition-colors duration-200 cursor-pointer select-none border-0 ${theme === 'dark'
                   ? 'bg-white/[0.08] hover:bg-white/[0.12] text-neutral-200 hover:text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]'
                   : 'bg-black/[0.05] hover:bg-black/[0.08] text-neutral-800 hover:text-black'
@@ -236,7 +236,7 @@ export function MinimalNavbar({
               <motion.div
                 className="flex items-center shrink-0"
                 whileHover={{ rotate: -12, scale: 1.12 }}
-                transition={{ type: 'spring', stiffness: 450, damping: 20 }}
+                transition={{ type: 'spring', stiffness: 450, damping: 28 }}
               >
                 <svg
                   viewBox="0 0 1024 1024"
@@ -266,7 +266,7 @@ export function MinimalNavbar({
               title="Syed Subhan on X"
               whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.94 }}
-              transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 28 }}
               className={`hidden xl:inline-flex items-center justify-center size-8 sm:size-8.5 rounded-full transition-colors duration-200 cursor-pointer select-none group border-0 ${theme === 'dark'
                   ? 'bg-white/[0.08] hover:bg-white/[0.12] text-neutral-200 hover:text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]'
                   : 'bg-black/[0.05] hover:bg-black/[0.08] text-neutral-700 hover:text-black'
@@ -274,7 +274,7 @@ export function MinimalNavbar({
             >
               <motion.div
                 whileHover={{ rotate: 10, scale: 1.15 }}
-                transition={{ type: 'spring', stiffness: 450, damping: 20 }}
+                transition={{ type: 'spring', stiffness: 450, damping: 28 }}
                 className="flex items-center justify-center"
               >
                 <svg viewBox="0 0 16 17" fill="currentColor" className="w-3 h-3">
@@ -292,7 +292,7 @@ export function MinimalNavbar({
               }}
               whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.92 }}
-              transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 28 }}
               className={`group hidden sm:inline-flex items-center justify-center size-8 sm:size-8.5 rounded-full transition-colors duration-200 cursor-pointer select-none border-0 ${theme === 'dark'
                   ? 'bg-white/[0.08] hover:bg-white/[0.12] text-neutral-200 hover:text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]'
                   : 'bg-black/[0.05] hover:bg-black/[0.08] text-neutral-700 hover:text-black'
@@ -302,7 +302,7 @@ export function MinimalNavbar({
             >
               <motion.div
                 whileHover={{ rotate: 180, scale: 1.15 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 22 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 className="flex items-center justify-center"
               >
                 {theme === 'dark' ? (

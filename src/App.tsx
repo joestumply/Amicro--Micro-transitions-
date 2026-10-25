@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef, lazy, Suspense } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, MotionConfig } from 'motion/react';
 import { Copy, Check } from 'lucide-react';
 import { buttonsData } from './data/buttons';
 import { AnimatedButton } from './components/AnimatedButton';
@@ -28,18 +28,7 @@ import { SpotlightCard } from './components/SpotlightCard';
 
 // Card layouts imports
 import { cardsData, CardConfig } from './data/cards';
-import { CardArc5 } from './components/cards/CardArc5';
-import { CardArc7 } from './components/cards/CardArc7';
-import { CardLongArc5 } from './components/cards/CardLongArc5';
-import { CardLinearSpread } from './components/cards/CardLinearSpread';
-import { CardCornerFan } from './components/cards/CardCornerFan';
-import { CardStampArc } from './components/cards/CardStampArc';
-import { CardCascadeStagger } from './components/cards/CardCascadeStagger';
-import { CardScatterSpread } from './components/cards/CardScatterSpread';
-import { CardWheelFan } from './components/cards/CardWheelFan';
-import { CardCarousel } from './components/cards/CardCarousel';
-import { CardCoverFlow } from './components/cards/CardCoverFlow';
-import { CardTimeMachine } from './components/cards/CardTimeMachine';
+import { CardPreviewTile } from './components/cards/CardPreviewTile';
 
 // Lazy load secondary subpages for optimal initial bundle performance
 const CliPage = lazy(() => import('./components/CliPage').then(m => ({ default: m.CliPage })));
@@ -56,6 +45,7 @@ const SponsorOnboardingPage = lazy(() => import('./components/SponsorOnboardingP
 const SponsorSuccessPage = lazy(() => import('./components/SponsorSuccessPage').then(m => ({ default: m.SponsorSuccessPage })));
 const AdminSponsorsPage = lazy(() => import('./components/AdminSponsorsPage').then(m => ({ default: m.AdminSponsorsPage })));
 import { POLAR_DEFAULT_URL } from './data/tiers';
+import { applyRouteMeta } from './utils/documentMeta';
 
 type LayoutMode = 'list' | 'grid' | 'matrix';
 type SortMode = 'default' | 'alphabetical';
@@ -100,6 +90,13 @@ const routeMap: Record<CatalogTabType, string> = {
   'dither-charts': '/dither-charts',
 };
 
+// Shared route transition: quick fade-out, short rise-in on the design-system curve
+const pageMotion = {
+  initial: { opacity: 0, y: 6 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] as const } },
+  exit: { opacity: 0, transition: { duration: 0.14, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+};
+
 function LoadingFallback({ theme = 'dark' }: { theme?: 'dark' | 'light' }) {
   return (
     <div className="w-full py-8">
@@ -117,7 +114,6 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageMode>('home');
   const [catalogTab, setCatalogTab] = useState<CatalogTabType>('buttons');
   const [copiedText, setCopiedText] = useState<string | null>(null);
-  const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const CHECKOUT_URL = POLAR_DEFAULT_URL;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
@@ -164,11 +160,15 @@ export default function App() {
     }
   }, [theme]);
 
-  // Eagerly preload SponsorsPage in background so navigating to sponsors is instant with 0ms delay
+  // Prefetch SponsorsPage (and its shader chunk) once the browser is idle, so it
+  // doesn't compete with first paint but navigating to sponsors is still instant
   useEffect(() => {
-    const timer = setTimeout(() => {
-      import('./components/SponsorsPage');
-    }, 150);
+    const prefetch = () => import('./components/SponsorsPage');
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(prefetch, { timeout: 4000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = setTimeout(prefetch, 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -268,7 +268,72 @@ export default function App() {
 
   const [selectedChartId, setSelectedChartId] = useState<string | null>(null);
 
+  // Scroll management for page swaps. The outer AnimatePresence runs in mode="wait",
+  // so the next page mounts only after the old one exits; we apply the pending scroll
+  // position in onExitComplete so it lands on the new page, not the outgoing one.
+  const currentPageRef = useRef<PageMode>(currentPage);
+  currentPageRef.current = currentPage;
+  const pendingScrollRef = useRef<number | 'components' | null>(null);
+  const homeScrollRef = useRef<number | null>(null);
+  const popNavRef = useRef(false);
+
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  const jumpTo = useCallback((top: number) => {
+    window.scrollTo({ top, left: 0, behavior: 'instant' as ScrollBehavior });
+  }, []);
+
+  const handlePageExitComplete = useCallback(() => {
+    const pending = pendingScrollRef.current;    pendingScrollRef.current = null;
+    if (pending === null) return;
+    if (pending === 0) {
+      jumpTo(0);
+      return;
+    }
+    // The incoming page mounts after this callback; wait (max ~0.5s) until it is
+    // laid out tall enough to hold the target offset, otherwise the scroll gets clamped.
+    let frames = 0;
+    const apply = () => {
+      frames++;
+      let top: number | null = null;
+      if (pending === 'components') {
+        const elem = document.getElementById('components');
+        if (elem) top = elem.getBoundingClientRect().top + window.scrollY;
+      } else if (document.documentElement.scrollHeight - window.innerHeight >= pending) {
+        top = pending;
+      }
+      if (top !== null) {
+        jumpTo(top);
+      } else if (frames < 30) {
+        requestAnimationFrame(apply);
+      } else {
+        jumpTo(pending === 'components' ? 0 : pending);
+      }
+    };
+    requestAnimationFrame(apply);
+  }, [jumpTo]);
+
+  const restoreHomeScroll = useCallback(() => {
+    popNavRef.current = false;
+    pendingScrollRef.current = homeScrollRef.current ?? 'components';
+    homeScrollRef.current = null;
+  }, []);
+
   const navigateToChartDetail = useCallback((chartId: string, customCategory?: string) => {
+    popNavRef.current = false;
+    if (currentPageRef.current === 'chart-detail') {
+      // Same page key, no exit animation: reset immediately
+      jumpTo(0);
+    } else {
+      if (currentPageRef.current === 'home') {
+        homeScrollRef.current = window.scrollY;
+      }
+      pendingScrollRef.current = 0;
+    }
     setSelectedChartId(chartId);
     setCurrentPage('chart-detail');
 
@@ -286,7 +351,11 @@ export default function App() {
     if (window.location.pathname !== targetUrl) {
       window.history.pushState(null, '', targetUrl);
     }
-  }, []);
+  }, [jumpTo]);
+
+  const openCardDetail = useCallback((card: CardConfig) => {
+    navigateToChartDetail(card.interactionType || card.id, card.category === 'carousels' ? 'carousels' : 'cards');
+  }, [navigateToChartDetail]);
 
   // Clean Path Router (Without # hash)
   useEffect(() => {
@@ -328,6 +397,13 @@ export default function App() {
       if (urlParams.has('checkout_id')) {
         setSelectedChartId(null);
         setCurrentPage('sponsor-onboarding');
+        return;
+      }
+
+      // Blog posts (/blog/<slug>) are handled inside BlogPage
+      if (route === 'blog' || route === 'blogs' || route.startsWith('blog/') || route.startsWith('blogs/')) {
+        setSelectedChartId(null);
+        setCurrentPage('blog');
         return;
       }
 
@@ -387,14 +463,47 @@ export default function App() {
       }
     };
 
+    const handlePopState = () => {
+      popNavRef.current = true;
+      handleLocationChange();
+    };
+
     handleLocationChange();
-    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('popstate', handlePopState);
     window.addEventListener('hashchange', handleLocationChange);
     return () => {
-      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('popstate', handlePopState);
       window.removeEventListener('hashchange', handleLocationChange);
     };
   }, []);
+
+  // Keep <head> metadata in sync with the URL (blog posts sync themselves in BlogPage)
+  useEffect(() => {
+    if (currentPage !== 'blog') applyRouteMeta(window.location.pathname);
+  }, [currentPage, selectedChartId, catalogTab]);
+
+  // Back/forward: reset to top on new pages, restore the catalog position when returning home
+  const prevPageRef = useRef<PageMode>(currentPage);
+  const prevChartIdRef = useRef<string | null>(selectedChartId);
+  useEffect(() => {
+    const prevPage = prevPageRef.current;
+    const prevChartId = prevChartIdRef.current;
+    prevPageRef.current = currentPage;
+    prevChartIdRef.current = selectedChartId;
+    if (!popNavRef.current) return;
+    popNavRef.current = false;
+
+    if (prevPage === currentPage) {
+      if (currentPage === 'chart-detail' && prevChartId !== selectedChartId) jumpTo(0);
+      return;
+    }
+    if (currentPage === 'home' && prevPage === 'chart-detail') {
+      restoreHomeScroll();
+    } else {
+      if (prevPage === 'home') homeScrollRef.current = window.scrollY;
+      pendingScrollRef.current = 0;
+    }
+  }, [currentPage, selectedChartId, jumpTo, restoreHomeScroll]);
 
   useEffect(() => {
     fetch('https://api.github.com/repos/Subhan-code/Amicro--Micro-transitions-')
@@ -621,6 +730,8 @@ export default function App() {
       window.history.pushState(null, '', targetPath);
     }
     setMobileMenuOpen(false);
+    popNavRef.current = false;
+    pendingScrollRef.current = 0;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [catalogTab, triggerHaptic]);
 
@@ -677,12 +788,15 @@ export default function App() {
     if (window.location.pathname !== '/' || window.location.hash) {
       window.history.pushState(null, '', '/');
     }
+    popNavRef.current = false;
+    pendingScrollRef.current = 0;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [triggerHaptic]);
 
   const handleSelectNav = useCallback((key: NavItemKey) => {
     triggerHaptic('light');
     setMobileMenuOpen(false);
+    popNavRef.current = false;
     setSelectedChartId(null);
 
     if (key === 'components') {
@@ -703,14 +817,7 @@ export default function App() {
         if (window.location.pathname !== '/' && window.location.pathname !== '/buttons') {
           window.history.pushState(null, '', '/');
         }
-        setTimeout(() => {
-          const elem = document.getElementById('components');
-          if (elem) {
-            elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        }, 180);
+        pendingScrollRef.current = 'components';
       }
     } else if (key === 'anime') {
       if (currentPage === 'home') {
@@ -728,43 +835,50 @@ export default function App() {
         if (window.location.pathname !== '/Anime') {
           window.history.pushState(null, '', '/Anime');
         }
-        setTimeout(() => {
-          const elem = document.getElementById('components');
-          if (elem) {
-            elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 180);
+        pendingScrollRef.current = 'components';
       }
     } else if (key === 'cli') {
       setCurrentPage('cli');
       if (window.location.pathname !== '/cli') {
         window.history.pushState(null, '', '/cli');
       }
+      pendingScrollRef.current = 0;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (key === 'skills') {
       setCurrentPage('skills');
       if (window.location.pathname !== '/skills') {
         window.history.pushState(null, '', '/skills');
       }
+      pendingScrollRef.current = 0;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (key === 'blogs') {
       setCurrentPage('blog');
       if (window.location.pathname !== '/blog') {
         window.history.pushState(null, '', '/blog');
       }
+      pendingScrollRef.current = 0;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (key === 'sponsors') {
       setCurrentPage('sponsors');
       if (window.location.pathname !== '/sponsors') {
         window.history.pushState(null, '', '/sponsors');
       }
+      pendingScrollRef.current = 0;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [currentPage, triggerHaptic]);
 
   return (
-    <div className={`relative w-full max-w-full overflow-x-clip min-h-dvh flex flex-col font-sans antialiased transition-colors duration-300 ${theme === 'dark' ? 'dark bg-[#08080a] text-[#ededed] selection:bg-neutral-800' : 'bg-[#f8f9fa] text-[#0a0a0c] selection:bg-neutral-200'}`}>
+    <MotionConfig reducedMotion="user">
+    <div className={`relative w-full max-w-full overflow-x-clip min-h-dvh flex flex-col font-sans antialiased transition-colors duration-250 ${theme === 'dark' ? 'dark bg-[#08080a] text-[#ededed] selection:bg-neutral-800' : 'bg-[#f8f9fa] text-[#0a0a0c] selection:bg-neutral-200'}`}>
       
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:rounded-lg focus:bg-foreground focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-background"
+      >
+        Skip to content
+      </a>
+
       {/* Site Minimal Floating Navbar */}
       <MinimalNavbar
         theme={theme}
@@ -786,6 +900,7 @@ export default function App() {
           } else if (cat === 'dither-charts') {
             navigateTo('dither-charts');
           } else {
+            restoreHomeScroll();
             handleTabChange(cat as CatalogTabType);
             setCurrentPage('home');
           }
@@ -793,14 +908,12 @@ export default function App() {
       />
 
       {/* Render subpages or HomePage */}
-      <AnimatePresence mode="wait">
+      <main id="main-content" tabIndex={-1} className="flex-1 w-full flex flex-col outline-none">
+      <AnimatePresence mode="wait" onExitComplete={handlePageExitComplete}>
         {currentPage === 'cli' ? (
           <motion.div
             key="cli-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <CliPage
@@ -815,10 +928,7 @@ export default function App() {
         ) : currentPage === 'skills' ? (
           <motion.div
             key="skills-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <SkillsPage
@@ -833,10 +943,7 @@ export default function App() {
         ) : currentPage === 'sponsors' ? (
           <motion.div
             key="sponsors-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <SponsorsPage
@@ -852,10 +959,7 @@ export default function App() {
         ) : currentPage === 'chart-detail' && selectedChartId ? (
           <motion.div
             key="chart-detail-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <ChartDetailPage
@@ -866,10 +970,7 @@ export default function App() {
                 showToast={showToast}
                 triggerHaptic={triggerHaptic}
                 onToggleTheme={handleThemeToggle}
-                onSelectComponent={(id, cat) => {
-                  navigateToChartDetail(id, cat);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onSelectComponent={(id, cat) => navigateToChartDetail(id, cat)}
                 onNavigateTab={(cat) => {
                   setSelectedChartId(null);
                   if (cat === 'mono-charts') {
@@ -879,6 +980,9 @@ export default function App() {
                   } else if (cat === 'anime') {
                     handleSelectNav('anime');
                   } else {
+                    popNavRef.current = false;
+                    homeScrollRef.current = null;
+                    pendingScrollRef.current = 'components';
                     handleTabChange(cat as CatalogTabType);
                     setCurrentPage('home');
                   }
@@ -892,6 +996,7 @@ export default function App() {
                   } else if (cat === 'dither-charts') {
                     navigateTo('dither-charts');
                   } else {
+                    restoreHomeScroll();
                     handleTabChange(cat as CatalogTabType);
                     setCurrentPage('home');
                   }
@@ -902,10 +1007,7 @@ export default function App() {
         ) : currentPage === 'mono-charts' ? (
           <motion.div
             key="mono-charts-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <MonoChartsPage
@@ -922,10 +1024,7 @@ export default function App() {
         ) : currentPage === '3d-page' ? (
           <motion.div
             key="3d-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <ThreeDPage theme={theme} showToast={showToast} triggerHaptic={triggerHaptic} onNavigateHome={handleNavigateHome} />
@@ -934,10 +1033,7 @@ export default function App() {
         ) : currentPage === 'css-animations' ? (
           <motion.div
             key="css-animations-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <CssAnimationsPage
@@ -951,10 +1047,7 @@ export default function App() {
         ) : currentPage === 'text-animations' ? (
           <motion.div
             key="text-animations-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <TextAnimationsPage
@@ -968,10 +1061,7 @@ export default function App() {
         ) : currentPage === 'blog' ? (
           <motion.div
             key="blog-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <BlogPage
@@ -985,10 +1075,7 @@ export default function App() {
         ) : currentPage === 'sponsor-onboarding' ? (
           <motion.div
             key="sponsor-onboarding-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <SponsorOnboardingPage
@@ -1005,10 +1092,7 @@ export default function App() {
         ) : currentPage === 'sponsor-success' ? (
           <motion.div
             key="sponsor-success-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <SponsorSuccessPage
@@ -1025,10 +1109,7 @@ export default function App() {
         ) : currentPage === 'admin-sponsors' ? (
           <motion.div
             key="admin-sponsors-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
           >
             <Suspense fallback={<LoadingFallback />}>
               <AdminSponsorsPage
@@ -1041,10 +1122,7 @@ export default function App() {
         ) : (
           <motion.div
             key="home-page"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
+            {...pageMotion}
             className="w-full flex flex-col"
           >
             {/* Hero Section */}
@@ -1069,7 +1147,8 @@ export default function App() {
             />
 
             {/* Component Cards Gallery & Discovery Playground */}
-            <section id="components" className="mx-auto max-w-[1600px] w-full px-4 sm:px-8 lg:px-12 2xl:px-16 pt-2 pb-16 2xl:pb-24">
+            <section id="components" aria-labelledby="components-heading" className="mx-auto max-w-[1600px] w-full px-4 sm:px-8 lg:px-12 2xl:px-16 pt-2 pb-16 2xl:pb-24 scroll-mt-20">
+              <h2 id="components-heading" className="sr-only">{tabLabels[catalogTab]} components</h2>
               <div className="space-y-6">
                 {/* Minimalist Stadium Category Filter Bar */}
                 <CategoryPillBar
@@ -1120,8 +1199,8 @@ export default function App() {
                           initial={{ opacity: 0, y: 14 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
-                            duration: 0.32,
-                            delay: Math.min(index * 0.02, 0.3),
+                            duration: 0.25,
+                            delay: Math.min(index * 0.015, 0.05),
                             ease: [0.16, 1, 0.3, 1],
                           }}
                           className="w-full"
@@ -1136,7 +1215,7 @@ export default function App() {
                             >
                               <SpotlightCard
                                 theme={theme}
-                                className={`relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl border transition-all duration-300 flex items-center justify-center p-6 ${
+                                className={`relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl border transition-all duration-250 flex items-center justify-center p-6 ${
                                   theme === 'dark'
                                     ? 'bg-black border-white/[0.07] group-hover/card:border-white/[0.18] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]'
                                     : 'bg-[#f5f6f8] border-neutral-200/80 group-hover/card:border-neutral-300 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]'
@@ -1220,8 +1299,8 @@ export default function App() {
                                       initial={{ opacity: 0, y: 12 }}
                                       animate={{ opacity: 1, y: 0 }}
                                       transition={{
-                                        duration: 0.3,
-                                        delay: Math.min(loaderIdx * 0.02, 0.25),
+                                        duration: 0.25,
+                                        delay: Math.min(loaderIdx * 0.015, 0.05),
                                         ease: [0.16, 1, 0.3, 1],
                                       }}
                                       className={`group/card relative ${isWavePhysics ? 'col-span-full' : ''}`}
@@ -1235,7 +1314,7 @@ export default function App() {
                                       >
                                         <SpotlightCard
                                           theme={theme}
-                                          className={`relative w-full rounded-2xl sm:rounded-3xl bg-black border border-white/[0.06] group-hover/card:border-white/[0.16] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] flex items-center justify-center transition-all duration-300 ${
+                                          className={`relative w-full rounded-2xl sm:rounded-3xl bg-black border border-white/[0.06] group-hover/card:border-white/[0.16] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] flex items-center justify-center transition-all duration-250 ${
                                             isWavePhysics 
                                               ? 'h-44 sm:h-48 md:h-52 p-4 sm:p-5' 
                                               : 'aspect-[16/10] p-3 sm:p-4'
@@ -1360,64 +1439,20 @@ export default function App() {
                             initial={{ opacity: 0, y: 14 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{
-                              duration: 0.32,
-                              delay: Math.min(index * 0.025, 0.35),
+                              duration: 0.25,
+                              delay: Math.min(index * 0.015, 0.05),
                               ease: [0.16, 1, 0.3, 1],
                             }}
                             className="w-full"
                           >
                             <article className="group/card relative">
                               <div className="block focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 rounded-3xl no-underline text-inherit">
-                                <div
-                                  onClick={(e) => {
-                                    const isFine = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
-                                    if (isFine) {
-                                      if (triggerHaptic) triggerHaptic('light');
-                                      navigateToChartDetail(card.interactionType || card.id, card.category === 'carousels' ? 'carousels' : 'cards');
-                                    } else {
-                                      e.stopPropagation();
-                                      setHoveredCardId(prev => (prev === card.id ? null : card.id));
-                                      if (triggerHaptic) triggerHaptic('light');
-                                    }
-                                  }}
-                                  onTouchEnd={(e) => {
-                                    // Single tap on mobile touch screens immediately spreads or closes the cards
-                                    e.stopPropagation();
-                                    setHoveredCardId(prev => (prev === card.id ? null : card.id));
-                                    if (triggerHaptic) triggerHaptic('light');
-                                  }}
-                                  onMouseEnter={() => {
-                                    if (typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches) {
-                                      setHoveredCardId(card.id);
-                                    }
-                                  }}
-                                  onMouseLeave={() => {
-                                    if (typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches) {
-                                      setHoveredCardId(null);
-                                    }
-                                  }}
-                                  className={`relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl bg-black border border-white/[0.07] group-hover/card:border-white/[0.18] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] flex items-center justify-center transition-all duration-300 cursor-pointer ${hoveredCardId === card.id ? 'overflow-visible z-20' : 'overflow-hidden z-1'}`}
-                                >
-                                  <div className="relative h-full w-full flex items-center justify-center pointer-events-none">
-                                    <InViewRender active={catalogTab === 'cards' || catalogTab === 'carousels'}>
-                                      {card.interactionType === 'card-arc-5' && <CardArc5 hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-arc-7' && <CardArc7 hovered={hoveredCardId === card.id} className="scale-[0.55] sm:scale-[0.85] origin-center" />}
-                                      {card.interactionType === 'card-long-arc-5' && <CardLongArc5 hovered={hoveredCardId === card.id} className="scale-[0.55] sm:scale-[0.85] origin-center" />}
-                                      {card.interactionType === 'card-linear-spread' && <CardLinearSpread hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-corner-fan' && <CardCornerFan hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-stamp-arc' && <CardStampArc hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-cascade-stagger' && <CardCascadeStagger hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-scatter-spread' && <CardScatterSpread hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-wheel-fan' && <CardWheelFan hovered={hoveredCardId === card.id} className="scale-[0.6] sm:scale-[0.9] origin-center" />}
-                                      {card.interactionType === 'card-carousel' && <CardCarousel hovered={hoveredCardId === card.id} className="scale-[0.5] sm:scale-[0.8] origin-center" />}
-                                      {card.interactionType === 'card-cover-flow' && <CardCoverFlow hovered={hoveredCardId === card.id} className="scale-[0.5] sm:scale-[0.8] origin-center" />}
-                                      {card.interactionType === 'card-time-machine' && <CardTimeMachine hovered={hoveredCardId === card.id} className="scale-[0.5] sm:scale-[0.8] origin-center" />}
-                                      {card.interactionType === 'card-carousel-mono' && <CardCarousel hovered={hoveredCardId === card.id} isMonochrome={true} className="scale-[0.5] sm:scale-[0.8] origin-center" />}
-                                      {card.interactionType === 'card-cover-flow-mono' && <CardCoverFlow hovered={hoveredCardId === card.id} isMonochrome={true} className="scale-[0.5] sm:scale-[0.8] origin-center" />}
-                                      {card.interactionType === 'card-time-machine-mono' && <CardTimeMachine hovered={hoveredCardId === card.id} isMonochrome={true} className="scale-[0.5] sm:scale-[0.8] origin-center" />}
-                                    </InViewRender>
-                                  </div>
-                                </div>
+                                <CardPreviewTile
+                                  card={card}
+                                  active={catalogTab === 'cards' || catalogTab === 'carousels'}
+                                  onOpen={openCardDetail}
+                                  triggerHaptic={triggerHaptic}
+                                />
                                 <div
                                   onClick={(e) => {
                                     if (triggerHaptic) triggerHaptic('light');
@@ -1502,6 +1537,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      </main>
 
       {/* Minimal Footer */}
       <MinimalFooter
@@ -1572,5 +1608,6 @@ export default function App() {
 
       <Analytics />
     </div>
+    </MotionConfig>
   );
 }

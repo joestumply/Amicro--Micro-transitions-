@@ -119,7 +119,7 @@ export function Book({
         className="w-full h-full relative shadow-xl rounded-md"
         initial={{ rotateX: 12, rotateY: -10, rotateZ: -2, scale: 0.95 }}
         animate={{ rotateX: 6, rotateY: -4, rotateZ: 0, scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Base Left Page (Click to turn backward) */}

@@ -82,8 +82,8 @@ export const AmicroNavbar: React.FC<AmicroNavbarProps> = ({
       {/* Floating Menu Island Container */}
       <motion.nav
         layout
-        transition={{ duration: 0.36, ease: [0.16, 1, 0.3, 1] }}
-        className={`w-full transition-colors duration-300 overflow-hidden ${
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        className={`w-full transition-colors duration-250 overflow-hidden ${
           isOpen
             ? isDark
               ? 'bg-[#131417] rounded-[32px] sm:rounded-[36px] shadow-2xl border border-white/10'
@@ -168,7 +168,7 @@ export const AmicroNavbar: React.FC<AmicroNavbarProps> = ({
                     width: '28px',
                     y: isOpen ? 0 : -3.5,
                   }}
-                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                   className={`h-[2.5px] rounded-full block ${isDark ? 'bg-white' : 'bg-zinc-900'}`}
                 />
                 <motion.span
@@ -197,15 +197,15 @@ export const AmicroNavbar: React.FC<AmicroNavbarProps> = ({
                 height: 'auto',
                 opacity: 1,
                 transition: {
-                  height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
-                  opacity: { duration: 0.3, delay: 0.04 },
+                  height: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+                  opacity: { duration: 0.25, delay: 0.04 },
                 },
               }}
               exit={{
                 height: 0,
                 opacity: 0,
                 transition: {
-                  height: { duration: 0.32, ease: [0.16, 1, 0.3, 1] },
+                  height: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
                   opacity: { duration: 0.2, ease: 'easeOut' },
                 },
               }}
@@ -233,7 +233,7 @@ export const AmicroNavbar: React.FC<AmicroNavbarProps> = ({
                     </span>
                     <motion.div
                       animate={{ rotate: componentsExpanded ? 0 : 180 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                       className={isDark ? 'text-white' : 'text-zinc-900'}
                     >
                       <ChevronUp className="w-6 h-6 stroke-[2.5]" />
@@ -249,7 +249,7 @@ export const AmicroNavbar: React.FC<AmicroNavbarProps> = ({
                           height: 'auto',
                           opacity: 1,
                           transition: {
-                            height: { duration: 0.36, ease: [0.16, 1, 0.3, 1] },
+                            height: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
                             opacity: { duration: 0.26, delay: 0.03 },
                           },
                         }}
@@ -398,7 +398,7 @@ export const AmicroNavbar: React.FC<AmicroNavbarProps> = ({
                   <motion.button
                     whileTap={{ scale: 0.98 }}
                     whileHover={{ scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+                    transition={{ type: 'spring', stiffness: 450, damping: 28 }}
                     onClick={() => {
                       if (onExploreClick) onExploreClick();
                       else if (onSelectNav) onSelectNav('components');

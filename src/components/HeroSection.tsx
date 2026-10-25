@@ -22,7 +22,7 @@ export function HeroSection({
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { stiffness: 180, damping: 24, mass: 0.5 };
+  const springConfig = { stiffness: 180, damping: 14, mass: 0.5 };
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
@@ -64,7 +64,7 @@ export function HeroSection({
       {/* Cinematic Ambient Atmosphere Glow */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[680px] sm:w-[900px] 2xl:w-[1100px] h-[340px] sm:h-[420px] 2xl:h-[500px] opacity-45 dark:opacity-20 blur-[120px] rounded-full transition-opacity duration-500"
+        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[680px] sm:w-[900px] 2xl:w-[1100px] h-[340px] sm:h-[420px] 2xl:h-[500px] opacity-45 dark:opacity-20 blur-[120px] rounded-full transition-opacity duration-250"
         style={{
           background: theme === 'dark' 
             ? 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.4), rgba(59, 130, 246, 0.2), transparent 70%)'
@@ -76,7 +76,7 @@ export function HeroSection({
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="mb-6 sm:mb-8 inline-flex items-center self-start sm:self-auto"
       >
         <motion.a
@@ -86,7 +86,7 @@ export function HeroSection({
           onClick={() => triggerHaptic?.('light')}
           whileHover={{ y: -1.5, scale: 1.025 }}
           whileTap={{ scale: 0.98 }}
-          transition={{ type: 'spring', stiffness: 450, damping: 24 }}
+          transition={{ type: 'spring', stiffness: 450, damping: 28 }}
           className={`group inline-flex items-center gap-2.5 py-1.5 sm:py-2 px-4 sm:px-5 rounded-full border transition-all duration-200 no-underline cursor-pointer ${
             theme === 'dark'
               ? 'bg-[#121214] border-white/[0.1] hover:border-white/[0.22] text-neutral-200 hover:text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_2px_8px_rgba(0,0,0,0.4)]'
@@ -117,7 +117,7 @@ export function HeroSection({
         className="relative w-full"
       >
         <h1
-          className={`text-fluid-hero font-semibold mb-4 sm:mb-5 max-w-4xl 2xl:max-w-5xl text-left sm:text-center sm:mx-auto transition-colors duration-300 ${
+          className={`text-fluid-hero font-semibold mb-4 sm:mb-5 max-w-4xl 2xl:max-w-5xl text-left sm:text-center sm:mx-auto transition-colors duration-250 ${
             theme === 'dark' ? 'text-[#ededed]' : 'text-[#0a0a0c]'
           }`}
         >
@@ -146,8 +146,8 @@ export function HeroSection({
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className={`text-fluid-sub max-w-[560px] lg:max-w-[640px] 2xl:max-w-[720px] text-left sm:text-center sm:mx-auto font-normal transition-colors duration-300 ${
+        transition={{ duration: 0.25, delay: 0.03, ease: [0.16, 1, 0.3, 1] }}
+        className={`text-fluid-sub max-w-[560px] lg:max-w-[640px] 2xl:max-w-[720px] text-left sm:text-center sm:mx-auto font-normal transition-colors duration-250 ${
           theme === 'dark' ? 'text-neutral-400' : 'text-neutral-600'
         }`}
       >
@@ -158,7 +158,7 @@ export function HeroSection({
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.25, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
         className="flex flex-row items-center justify-start sm:justify-center gap-2 sm:gap-3.5 2xl:gap-4 mt-8 sm:mt-10 2xl:mt-12 w-full max-w-md 2xl:max-w-lg px-0 sm:px-2"
       >
         {/* Primary CTA: Explore Components with Micro-Spring (Rectangle with rounded corners) */}
@@ -176,7 +176,7 @@ export function HeroSection({
             hover: {
               y: -2,
               scale: 1.02,
-              transition: { type: 'spring', stiffness: 450, damping: 22 },
+              transition: { type: 'spring', stiffness: 450, damping: 28 },
             },
           }}
           className={`group inline-flex items-center justify-center gap-1.5 sm:gap-2.5 h-[40px] px-3.5 sm:px-5 rounded-xl sm:rounded-xl text-[12px] sm:text-[13.5px] font-semibold border border-transparent cursor-pointer transition-colors duration-200 shadow-xs shrink-0 whitespace-nowrap ${
@@ -190,7 +190,7 @@ export function HeroSection({
               initial: { rotate: 0, scale: 1 },
               hover: { rotate: [0, -10, 10, -5, 0], scale: 1.15 },
             }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             className="flex items-center shrink-0"
           >
             <svg viewBox="0 0 24 24" className="w-[14px] h-[14px] sm:w-[15px] sm:h-[15px] block shrink-0" fill="currentColor" aria-hidden="true">
@@ -220,7 +220,7 @@ export function HeroSection({
             hover: {
               y: -2,
               scale: 1.02,
-              transition: { type: 'spring', stiffness: 450, damping: 22 },
+              transition: { type: 'spring', stiffness: 450, damping: 28 },
             },
           }}
           className={`group inline-flex items-center justify-center gap-1.5 sm:gap-2.5 h-[40px] px-3 sm:px-4 rounded-xl sm:rounded-xl text-[12px] sm:text-[13.5px] font-medium no-underline cursor-pointer border transition-colors duration-200 shadow-xs shrink-0 whitespace-nowrap ${
@@ -235,7 +235,7 @@ export function HeroSection({
               initial: { rotate: 0, scale: 1 },
               hover: { rotate: [0, -8, 8, 0], scale: 1.15 },
             }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             className="flex items-center shrink-0"
           >
             <svg

@@ -38,8 +38,8 @@ export function MonoRoundedStreamChart({ theme = 'dark', compact = false }: Mono
     <motion.div
       initial={{ opacity: 0, scale: 0.98, y: 6 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative w-full rounded-3xl transition-all duration-300 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative w-full rounded-3xl transition-all duration-250 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
         compact ? 'aspect-[16/10] min-h-[220px] w-full' : 'min-h-[290px]'
       } ${
         isDark ? 'bg-[#141414] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/20' : 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-neutral-200 text-black hover:border-neutral-300'
@@ -64,7 +64,7 @@ export function MonoRoundedStreamChart({ theme = 'dark', compact = false }: Mono
       </div>
 
       {/* Main Stage */}
-      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-2 transition-colors min-h-0 duration-300 ${
+      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-2 transition-colors min-h-0 duration-250 ${
         isDark ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       }`}>
         <svg className="absolute w-0 h-0 pointer-events-none">
@@ -93,7 +93,7 @@ export function MonoRoundedStreamChart({ theme = 'dark', compact = false }: Mono
               strokeLinecap="round"
               strokeLinejoin="round"
               fill={`url(#${idPrefix}stream-g1)`}
-              animationDuration={700}
+              animationDuration={280}
             />
             <Area
               type="natural"
@@ -104,7 +104,7 @@ export function MonoRoundedStreamChart({ theme = 'dark', compact = false }: Mono
               strokeLinecap="round"
               strokeLinejoin="round"
               fill={`url(#${idPrefix}stream-g2)`}
-              animationDuration={700}
+              animationDuration={280}
             />
           </AreaChart>
         </ResponsiveContainer>

@@ -177,7 +177,7 @@ export function AiResponseStream({
             >
               <motion.div
                 animate={isRotating ? { rotate: 360 } : { rotate: 0 }}
-                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                transition={{ duration: 0.25, ease: 'easeInOut' }}
               >
                 <RotateCw className="w-3.5 h-3.5" />
               </motion.div>

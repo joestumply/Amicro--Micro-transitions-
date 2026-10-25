@@ -154,7 +154,7 @@ export const CardTimeMachine = React.memo(function CardTimeMachine({
                   animate={{
                     scaleX: hoveredIndex === null ? 1 : (isSelected ? 1.4 : (Math.abs(index - hoveredIndex) < 0.5 ? 1.25 : 1)),
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
               </button>
             );
@@ -178,7 +178,7 @@ export const CardTimeMachine = React.memo(function CardTimeMachine({
                     scaleX: hoveredIndex === null ? 1 : (isHoveringNear ? 1.15 : 1),
                     opacity: hoveredIndex === null ? 0.3 : (isHoveringNear ? 0.5 : 0.3)
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
               </div>
             );

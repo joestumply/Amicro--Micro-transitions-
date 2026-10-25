@@ -33,7 +33,7 @@ export function AiPromptChips({
             type="button"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.05, duration: 0.3 }}
+            transition={{ delay: index * 0.05, duration: 0.25 }}
             whileHover={{ y: -2, scale: 1.03 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => {

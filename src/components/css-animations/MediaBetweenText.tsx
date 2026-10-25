@@ -55,7 +55,7 @@ export const MediaBetweenText = forwardRef<MediaBetweenTextRef, MediaBetweenText
           width: "auto",
           opacity: 1,
           scale: 1,
-          transition: { duration: 0.35, type: "spring", bounce: 0.15 },
+          transition: { duration: 0.25, type: "spring", bounce: 0.15 },
         },
       },
       className = "inline-flex items-center cursor-pointer select-none",

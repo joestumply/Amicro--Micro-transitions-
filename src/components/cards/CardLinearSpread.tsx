@@ -13,7 +13,7 @@ interface CardLinearSpreadProps {
 
 export const CardLinearSpread = React.memo(function CardLinearSpread({
   gap = 90,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-400 dark:bg-neutral-800',
   className = '',
@@ -38,7 +38,7 @@ export const CardLinearSpread = React.memo(function CardLinearSpread({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

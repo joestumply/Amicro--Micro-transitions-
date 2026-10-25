@@ -39,7 +39,7 @@ const hexToRgba = (hex: string, alpha: number) => {
 
 function AnimatedNumber({ value }: { value: number }) {
   const prefersReducedMotion = useReducedMotion();
-  const spring = useSpring(value, { stiffness: 190, damping: 27, mass: 0.7 });
+  const spring = useSpring(value, { stiffness: 190, damping: 20, mass: 0.7 });
   const display = useTransform(spring, (current) => 
     Math.round(current).toLocaleString('en-US')
   );
@@ -379,7 +379,7 @@ export function ChartCard() {
               <motion.div 
                 layoutId="activePeriod"
                 className="absolute inset-0 bg-white rounded-[7px] shadow-[0_0_0_1px_rgba(25,28,33,0.05),0_1px_2px_rgba(25,28,33,0.08)] z-0"
-                transition={{ duration: 0.32, bounce: 0.2, type: "spring" }}
+                transition={{ duration: 0.25, bounce: 0.2, type: "spring" }}
               />
             )}
             <span className="relative z-10">{p.name}</span>

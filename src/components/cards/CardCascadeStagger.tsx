@@ -36,7 +36,7 @@ export const CardCascadeStagger = React.memo(function CardCascadeStagger({
         const springConfig = {
           type: "spring",
           stiffness: 200,
-          damping: 22,
+          damping: 25,
           mass: 0.9
         };
 

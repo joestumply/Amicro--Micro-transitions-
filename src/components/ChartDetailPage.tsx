@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useRef, useEffect, lazy, Suspense } from 'react';
 import {
   ChevronLeft,
   Copy,
@@ -19,47 +19,47 @@ import { CopyButton } from './CopyButton';
 import { InViewRender } from './InViewRender';
 
 // Mono Charts imports
-import { MonoActivityHeatmap } from './mono-charts/MonoActivityHeatmap';
-import { MonoRoundedLineChart } from './mono-charts/MonoRoundedLineChart';
-import { MonoRoundedBarChart } from './mono-charts/MonoRoundedBarChart';
-import { MonoRoundedAreaChart } from './mono-charts/MonoRoundedAreaChart';
-import { MonoRoundedDonutChart } from './mono-charts/MonoRoundedDonutChart';
-import { MonoRoundedComposedChart } from './mono-charts/MonoRoundedComposedChart';
-import { MonoRoundedScatterChart } from './mono-charts/MonoRoundedScatterChart';
-import { MonoRoundedCandlestickChart } from './mono-charts/MonoRoundedCandlestickChart';
-import { MonoRoundedKpiCardChart } from './mono-charts/MonoRoundedKpiCardChart';
-import { MonoRoundedPyramidChart } from './mono-charts/MonoRoundedPyramidChart';
-import { MonoRoundedRadialBarGroup } from './mono-charts/MonoRoundedRadialBarGroup';
-import { MonoRoundedGaugeArc } from './mono-charts/MonoRoundedGaugeArc';
-import { MonoRoundedBulletChart } from './mono-charts/MonoRoundedBulletChart';
-import { MonoRoundedSankeyChart } from './mono-charts/MonoRoundedSankeyChart';
-import { MonoRoundedStepChart } from './mono-charts/MonoRoundedStepChart';
-import { MonoRoundedStackedBarChart } from './mono-charts/MonoRoundedStackedBarChart';
-import { MonoRoundedRadarChart } from './mono-charts/MonoRoundedRadarChart';
-import { MonoRoundedRadialGaugeChart } from './mono-charts/MonoRoundedRadialGaugeChart';
-import { MonoRoundedFunnelChart } from './mono-charts/MonoRoundedFunnelChart';
-import { MonoRoundedHeatmapChart } from './mono-charts/MonoRoundedHeatmapChart';
-import { MonoRoundedSparklineChart } from './mono-charts/MonoRoundedSparklineChart';
-import { MonoRoundedBubbleChart } from './mono-charts/MonoRoundedBubbleChart';
-import { MonoRoundedTreemapChart } from './mono-charts/MonoRoundedTreemapChart';
-import { MonoRoundedStreamChart } from './mono-charts/MonoRoundedStreamChart';
-import { MonoRoundedMeterChart } from './mono-charts/MonoRoundedMeterChart';
-import { MonoRoundedWaterfallChart } from './mono-charts/MonoRoundedWaterfallChart';
-import { MonoRoundedPolarChart } from './mono-charts/MonoRoundedPolarChart';
-import { MonoRoundedRangeChart } from './mono-charts/MonoRoundedRangeChart';
+const MonoActivityHeatmap = lazy(() => import('./mono-charts/MonoActivityHeatmap').then(m => ({ default: m.MonoActivityHeatmap })));
+const MonoRoundedLineChart = lazy(() => import('./mono-charts/MonoRoundedLineChart').then(m => ({ default: m.MonoRoundedLineChart })));
+const MonoRoundedBarChart = lazy(() => import('./mono-charts/MonoRoundedBarChart').then(m => ({ default: m.MonoRoundedBarChart })));
+const MonoRoundedAreaChart = lazy(() => import('./mono-charts/MonoRoundedAreaChart').then(m => ({ default: m.MonoRoundedAreaChart })));
+const MonoRoundedDonutChart = lazy(() => import('./mono-charts/MonoRoundedDonutChart').then(m => ({ default: m.MonoRoundedDonutChart })));
+const MonoRoundedComposedChart = lazy(() => import('./mono-charts/MonoRoundedComposedChart').then(m => ({ default: m.MonoRoundedComposedChart })));
+const MonoRoundedScatterChart = lazy(() => import('./mono-charts/MonoRoundedScatterChart').then(m => ({ default: m.MonoRoundedScatterChart })));
+const MonoRoundedCandlestickChart = lazy(() => import('./mono-charts/MonoRoundedCandlestickChart').then(m => ({ default: m.MonoRoundedCandlestickChart })));
+const MonoRoundedKpiCardChart = lazy(() => import('./mono-charts/MonoRoundedKpiCardChart').then(m => ({ default: m.MonoRoundedKpiCardChart })));
+const MonoRoundedPyramidChart = lazy(() => import('./mono-charts/MonoRoundedPyramidChart').then(m => ({ default: m.MonoRoundedPyramidChart })));
+const MonoRoundedRadialBarGroup = lazy(() => import('./mono-charts/MonoRoundedRadialBarGroup').then(m => ({ default: m.MonoRoundedRadialBarGroup })));
+const MonoRoundedGaugeArc = lazy(() => import('./mono-charts/MonoRoundedGaugeArc').then(m => ({ default: m.MonoRoundedGaugeArc })));
+const MonoRoundedBulletChart = lazy(() => import('./mono-charts/MonoRoundedBulletChart').then(m => ({ default: m.MonoRoundedBulletChart })));
+const MonoRoundedSankeyChart = lazy(() => import('./mono-charts/MonoRoundedSankeyChart').then(m => ({ default: m.MonoRoundedSankeyChart })));
+const MonoRoundedStepChart = lazy(() => import('./mono-charts/MonoRoundedStepChart').then(m => ({ default: m.MonoRoundedStepChart })));
+const MonoRoundedStackedBarChart = lazy(() => import('./mono-charts/MonoRoundedStackedBarChart').then(m => ({ default: m.MonoRoundedStackedBarChart })));
+const MonoRoundedRadarChart = lazy(() => import('./mono-charts/MonoRoundedRadarChart').then(m => ({ default: m.MonoRoundedRadarChart })));
+const MonoRoundedRadialGaugeChart = lazy(() => import('./mono-charts/MonoRoundedRadialGaugeChart').then(m => ({ default: m.MonoRoundedRadialGaugeChart })));
+const MonoRoundedFunnelChart = lazy(() => import('./mono-charts/MonoRoundedFunnelChart').then(m => ({ default: m.MonoRoundedFunnelChart })));
+const MonoRoundedHeatmapChart = lazy(() => import('./mono-charts/MonoRoundedHeatmapChart').then(m => ({ default: m.MonoRoundedHeatmapChart })));
+const MonoRoundedSparklineChart = lazy(() => import('./mono-charts/MonoRoundedSparklineChart').then(m => ({ default: m.MonoRoundedSparklineChart })));
+const MonoRoundedBubbleChart = lazy(() => import('./mono-charts/MonoRoundedBubbleChart').then(m => ({ default: m.MonoRoundedBubbleChart })));
+const MonoRoundedTreemapChart = lazy(() => import('./mono-charts/MonoRoundedTreemapChart').then(m => ({ default: m.MonoRoundedTreemapChart })));
+const MonoRoundedStreamChart = lazy(() => import('./mono-charts/MonoRoundedStreamChart').then(m => ({ default: m.MonoRoundedStreamChart })));
+const MonoRoundedMeterChart = lazy(() => import('./mono-charts/MonoRoundedMeterChart').then(m => ({ default: m.MonoRoundedMeterChart })));
+const MonoRoundedWaterfallChart = lazy(() => import('./mono-charts/MonoRoundedWaterfallChart').then(m => ({ default: m.MonoRoundedWaterfallChart })));
+const MonoRoundedPolarChart = lazy(() => import('./mono-charts/MonoRoundedPolarChart').then(m => ({ default: m.MonoRoundedPolarChart })));
+const MonoRoundedRangeChart = lazy(() => import('./mono-charts/MonoRoundedRangeChart').then(m => ({ default: m.MonoRoundedRangeChart })));
 
 // Dither Charts imports
-import { DitherDonutChart } from './dither-charts/DitherDonutChart';
-import { DitherGrowthChart } from './dither-charts/DitherGrowthChart';
-import { DitherStackedChart } from './dither-charts/DitherStackedChart';
-import { DitherFunnelChart } from './dither-charts/DitherFunnelChart';
-import { ActivityHeatmap } from './dither-charts/ActivityHeatmap';
-import { ServerGauge } from './dither-charts/ServerGauge';
-import { TrafficBubble } from './dither-charts/TrafficBubble';
-import { DeviceUsageChart } from './dither-charts/DeviceUsageChart';
-import { StorageUsageChart } from './dither-charts/StorageUsageChart';
-import { RevenueLineChart } from './dither-charts/RevenueLineChart';
-import { UptimeChart } from './dither-charts/UptimeChart';
+const DitherDonutChart = lazy(() => import('./dither-charts/DitherDonutChart').then(m => ({ default: m.DitherDonutChart })));
+const DitherGrowthChart = lazy(() => import('./dither-charts/DitherGrowthChart').then(m => ({ default: m.DitherGrowthChart })));
+const DitherStackedChart = lazy(() => import('./dither-charts/DitherStackedChart').then(m => ({ default: m.DitherStackedChart })));
+const DitherFunnelChart = lazy(() => import('./dither-charts/DitherFunnelChart').then(m => ({ default: m.DitherFunnelChart })));
+const ActivityHeatmap = lazy(() => import('./dither-charts/ActivityHeatmap').then(m => ({ default: m.ActivityHeatmap })));
+const ServerGauge = lazy(() => import('./dither-charts/ServerGauge').then(m => ({ default: m.ServerGauge })));
+const TrafficBubble = lazy(() => import('./dither-charts/TrafficBubble').then(m => ({ default: m.TrafficBubble })));
+const DeviceUsageChart = lazy(() => import('./dither-charts/DeviceUsageChart').then(m => ({ default: m.DeviceUsageChart })));
+const StorageUsageChart = lazy(() => import('./dither-charts/StorageUsageChart').then(m => ({ default: m.StorageUsageChart })));
+const RevenueLineChart = lazy(() => import('./dither-charts/RevenueLineChart').then(m => ({ default: m.RevenueLineChart })));
+const UptimeChart = lazy(() => import('./dither-charts/UptimeChart').then(m => ({ default: m.UptimeChart })));
 
 // Cards & Carousels imports
 import { CardArc5 } from './cards/CardArc5';
@@ -82,8 +82,8 @@ import { buttonsData } from '../data/buttons';
 import { cardsData } from '../data/cards';
 import { getComponentCode, getCardComponentCode } from '../utils/codeGenerator';
 
-// Raw component sources loaded dynamically via Vite
-const rawComponents = ((import.meta as unknown as { glob: (patterns: string[], options?: Record<string, unknown>) => Record<string, string> }).glob([
+// Raw component sources, fetched on demand (only when Code / Manual view opens)
+const rawComponents = ((import.meta as unknown as { glob: (patterns: string[], options?: Record<string, unknown>) => Record<string, () => Promise<string>> }).glob([
   './cards/*.tsx',
   './mono-charts/*.tsx',
   './dither-charts/*.tsx',
@@ -91,7 +91,7 @@ const rawComponents = ((import.meta as unknown as { glob: (patterns: string[], o
   './morphing/*.tsx',
   './css-animations/*.tsx',
   './*.tsx',
-], { query: '?raw', import: 'default', eager: true })) || {};
+], { query: '?raw', import: 'default' })) || {};
 
 // Loaders import
 import { loaderGroups } from '../data/loaders';
@@ -241,10 +241,12 @@ export function ChartDetailPage({
 
   const isCodeViewActive = activeTab === 'code' || installMode === 'manual';
 
-  const realComponentCode = useMemo(() => {
+  type CodeSource = { kind: 'text'; code: string } | { kind: 'raw'; key: string };
+
+  const codeSource = useMemo<CodeSource>(() => {
     // Deferred code resolution: do not evaluate until user opens Code or Manual view
     if (!isCodeViewActive) {
-      return '';
+      return { kind: 'text', code: '' };
     }
 
     // 1. Buttons: use codeGenerator
@@ -253,24 +255,24 @@ export function ChartDetailPage({
       (b) => b.id === chartId || b.id === cleanButtonId || b.interactionType === chartId || b.interactionType === cleanButtonId
     );
     if (foundButton) {
-      return getComponentCode(foundButton);
+      return { kind: 'text', code: getComponentCode(foundButton) };
     }
 
     // 2. Direct raw component file match
     const cleanId = chartId.replace(/[-_]/g, '').toLowerCase();
-    for (const [key, code] of Object.entries(rawComponents)) {
+    for (const key of Object.keys(rawComponents)) {
       const base = key.split('/').pop()?.replace(/\.tsx?$/, '').toLowerCase();
       if (base === cleanId || base === `card${cleanId}`) {
-        return code;
+        return { kind: 'raw', key };
       }
     }
 
     // 3. Match from registry name in raw components
     const cleanReg = entry.registry.replace(/^@subhanhq\/amicro\//, '').replace(/^@amicro\//, '').replace(/[-_]/g, '').toLowerCase();
-    for (const [key, code] of Object.entries(rawComponents)) {
+    for (const key of Object.keys(rawComponents)) {
       const base = key.split('/').pop()?.replace(/\.tsx?$/, '').toLowerCase();
       if (base === cleanReg || base === `card${cleanReg}`) {
-        return code;
+        return { kind: 'raw', key };
       }
     }
 
@@ -279,7 +281,7 @@ export function ChartDetailPage({
     if (foundCard) {
       const generated = getCardComponentCode(foundCard);
       if (generated && generated !== '// No card interaction defined.') {
-        return generated;
+        return { kind: 'text', code: generated };
       }
     }
 
@@ -289,14 +291,38 @@ export function ChartDetailPage({
       if (match && match[1]) {
         const directKey = `./${match[1]}`;
         if (rawComponents[directKey]) {
-          return rawComponents[directKey];
+          return { kind: 'raw', key: directKey };
         }
       }
     }
 
     // 6. Fallback
-    return entry.usage;
+    return { kind: 'text', code: entry.usage };
   }, [chartId, entry, isCodeViewActive]);
+
+  const [loadedRaw, setLoadedRaw] = useState<{ key: string; code: string } | null>(null);
+
+  useEffect(() => {
+    if (codeSource.kind !== 'raw') return;
+    let cancelled = false;
+    rawComponents[codeSource.key]()
+      .then((code) => {
+        if (!cancelled) setLoadedRaw({ key: codeSource.key, code });
+      })
+      .catch(() => {
+        if (!cancelled) setLoadedRaw({ key: codeSource.key, code: entry.usage });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [codeSource, entry.usage]);
+
+  const realComponentCode =
+    codeSource.kind === 'text'
+      ? codeSource.code
+      : loadedRaw?.key === codeSource.key
+        ? loadedRaw.code
+        : '// Loading source...';
 
   const handleCopyInstallCmd = () => {
     navigator.clipboard.writeText(installCommand);
@@ -610,7 +636,7 @@ export function ChartDetailPage({
   return (
     <div className={`w-full min-h-screen flex flex-col font-sans transition-colors duration-200 ${isAppDark ? 'dark bg-[#08080a] text-[#ededed]' : 'bg-[#f8f9fa] text-[#0a0a0c]'}`}>
 
-      <main className="flex-1 w-full max-w-[1480px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 2xl:px-16 py-4 sm:py-6 2xl:py-8">
+      <div className="flex-1 w-full max-w-[1480px] 2xl:max-w-[1560px] mx-auto px-4 sm:px-8 lg:px-12 2xl:px-16 py-4 sm:py-6 2xl:py-8">
 
         <div className="w-full space-y-6">
 
@@ -813,7 +839,9 @@ export function ChartDetailPage({
                     }`}
                 >
                   <InViewRender active={activeTab === 'preview'}>
-                    {renderLiveComponent()}
+                    <Suspense fallback={null}>
+                      {renderLiveComponent()}
+                    </Suspense>
                   </InViewRender>
                 </div>
               ) : (
@@ -1341,7 +1369,7 @@ export function ChartDetailPage({
 
         </div>
 
-      </main>
+      </div>
 
     </div>
   );

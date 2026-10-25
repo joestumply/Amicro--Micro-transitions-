@@ -78,7 +78,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -10 }}
-                  transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                  transition={{ type: "spring", stiffness: 600, damping: 28 }}
                   className={`flex items-center shrink-0 ${!isMatrix ? 'mr-2.5' : ''}`}
                 >
                   <Icon1 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />
@@ -94,7 +94,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 10 }}
-                  transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                  transition={{ type: "spring", stiffness: 600, damping: 28 }}
                   className={`flex items-center shrink-0 ${!isMatrix ? 'ml-2.5' : ''}`}
                 >
                   {Icon2 && <Icon2 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />}
@@ -115,7 +115,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                     initial={{ y: -15, opacity: 0, scale: 0.8 }}
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     exit={{ y: -15, opacity: 0, scale: 0.8 }}
-                    transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 600, damping: 28 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     <Icon1 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />
@@ -126,7 +126,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                     initial={{ y: 15, opacity: 0, scale: 0.8 }}
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     exit={{ y: 15, opacity: 0, scale: 0.8 }}
-                    transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 600, damping: 28 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     {Icon2 && <Icon2 className={`w-[16px] h-[16px] ${config.icon2Color || (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />}
@@ -134,7 +134,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                       initial={{ opacity: 0, scale: 0, rotate: -45, y: 10 }}
                       animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
                       exit={{ opacity: 0, scale: 0, rotate: 45, y: 10 }}
-                      transition={{ type: "spring", stiffness: 600, damping: 25, delay: 0.05 }}
+                      transition={{ type: "spring", stiffness: 600, damping: 28, delay: 0.05 }}
                       className="absolute -top-3 -right-2"
                     >
                       <svg className="w-2.5 h-2.5 text-yellow-200" viewBox="0 0 24 24" fill="currentColor">
@@ -145,7 +145,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                       initial={{ opacity: 0, scale: 0, rotate: 45, x: 10 }}
                       animate={{ opacity: 1, scale: 1, rotate: 0, x: 0 }}
                       exit={{ opacity: 0, scale: 0, rotate: -45, x: 10 }}
-                      transition={{ type: "spring", stiffness: 600, damping: 25, delay: 0.1 }}
+                      transition={{ type: "spring", stiffness: 600, damping: 28, delay: 0.1 }}
                       className="absolute -top-1 -left-3"
                     >
                       <svg className="w-1.5 h-1.5 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
@@ -172,7 +172,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.5, opacity: 0 }}
-                    transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 600, damping: 28 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     <Icon1 className={`w-[16px] h-[16px] ${isHovered && config.icon1Color ? config.icon1Color : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />
@@ -183,7 +183,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.5, opacity: 0 }}
-                    transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 600, damping: 28 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     {Icon2 && <Icon2 className={`w-[16px] h-[16px] ${config.icon2Color || (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />}
@@ -203,9 +203,9 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
             <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
               <motion.div
                 animate={{ scale: isHovered ? [1, 1.25, 1] : 1 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
               >
-                <Icon1 className={`w-[16px] h-[16px] transition-colors duration-300 ${isHovered && config.icon1Color ? `${config.icon1Color} fill-current` : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />
+                <Icon1 className={`w-[16px] h-[16px] transition-colors duration-250 ${isHovered && config.icon1Color ? `${config.icon1Color} fill-current` : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />
               </motion.div>
             </div>
             {!isMatrix && <motion.span layout className="font-medium tracking-tight text-[13px] whitespace-nowrap ml-2.5">{config.label}</motion.span>}
@@ -216,7 +216,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
         return (
           <>
             <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
-              <motion.div animate={{ rotate: isHovered ? 180 : 0 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+              <motion.div animate={{ rotate: isHovered ? 180 : 0 }} transition={{ type: "spring", stiffness: 400, damping: 28 }}>
                 <Icon1 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />
               </motion.div>
             </div>
@@ -233,12 +233,12 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                   y: isHovered ? [0, -2, 0, -2, 0] : 0,
                   rotate: isHovered ? [0, -10, 10, -10, 0] : 0
                 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.25 }}
               >
-                <Icon1 className={`w-[16px] h-[16px] transition-colors duration-300 ${isHovered && config.icon1Color ? config.icon1Color : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />
+                <Icon1 className={`w-[16px] h-[16px] transition-colors duration-250 ${isHovered && config.icon1Color ? config.icon1Color : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />
               </motion.div>
             </div>
-            {!isMatrix && <motion.span layout className={`font-medium tracking-tight text-[13px] whitespace-nowrap transition-colors duration-300 ml-2.5 ${isHovered && config.icon1Color ? config.icon1Color : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`}>{config.label}</motion.span>}
+            {!isMatrix && <motion.span layout className={`font-medium tracking-tight text-[13px] whitespace-nowrap transition-colors duration-250 ml-2.5 ${isHovered && config.icon1Color ? config.icon1Color : (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`}>{config.label}</motion.span>}
           </>
         );
 
@@ -253,7 +253,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                     initial={{ rotate: -15, scale: 0.8, opacity: 0 }}
                     animate={{ rotate: 0, scale: 1, opacity: 1 }}
                     exit={{ rotate: 15, scale: 0.8, opacity: 0 }}
-                    transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 600, damping: 28 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     <Icon1 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />
@@ -264,14 +264,14 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                     initial={{ rotate: -15, scale: 0.8, opacity: 0 }}
                     animate={{ rotate: 0, scale: 1, opacity: 1 }}
                     exit={{ rotate: 15, scale: 0.8, opacity: 0 }}
-                    transition={{ type: "spring", stiffness: 600, damping: 25 }}
+                    transition={{ type: "spring", stiffness: 600, damping: 28 }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     {Icon2 && <Icon2 className={`w-[16px] h-[16px] ${config.icon2Color || (isLightTheme ? 'text-black' : 'text-[#e3e3e3]')}`} />}
                     <motion.div 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 600, damping: 15, delay: 0.1 }}
+                      transition={{ type: "spring", stiffness: 600, damping: 28, delay: 0.1 }}
                       className="absolute top-0 right-0 w-1.5 h-1.5 bg-red-500 rounded-full border border-transparent" 
                     />
                   </motion.div>
@@ -304,7 +304,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
         return (
           <>
             <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0 mr-2.5">
-              <motion.div animate={{ rotate: isHovered ? 45 : 0 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+              <motion.div animate={{ rotate: isHovered ? 45 : 0 }} transition={{ type: "spring", stiffness: 400, damping: 28 }}>
                 <Icon1 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />
               </motion.div>
             </div>
@@ -312,7 +312,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
               <div className="relative h-[18px] overflow-hidden">
                 <motion.div
                   animate={{ y: isHovered ? -18 : 0 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
                   className="flex flex-col"
                 >
                   <span className={`block h-[18px] leading-[18px] font-medium tracking-tight text-[13px] whitespace-nowrap ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`}>
@@ -341,7 +341,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
             <div className="relative w-[16px] h-[16px] flex items-center justify-center shrink-0">
               <motion.div
                 animate={{ scale: isHovered ? 1.1 : 1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                transition={{ type: "spring", stiffness: 400, damping: 28 }}
               >
                 <Icon1 className={`w-[16px] h-[16px] ${isLightTheme ? 'text-black' : 'text-[#e3e3e3]'}`} />
               </motion.div>
@@ -354,7 +354,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
                   initial={{ opacity: 1, scale: 1 }}
                   animate={{ opacity: 0, scale: 1.15 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
                   className={`absolute inset-0 rounded-[40px] pointer-events-none border ${isLightTheme ? 'border-black/25' : 'border-white/25'}`}
                 />
               )}
@@ -370,7 +370,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
   return (
     <motion.button
       layout
-      transition={{ type: "spring", stiffness: 500, damping: 25 }}
+      transition={{ type: "spring", stiffness: 500, damping: 28 }}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -404,7 +404,7 @@ export const AnimatedButton = React.memo(function AnimatedButton({ config, layou
           : 'text-zinc-100 bg-zinc-900 shadow-[inset_0px_0.5px_0px_1px_#65656522] drop-shadow-md border border-white/[0.06]'
       }`}
     >
-      <motion.div layout transition={{ type: "spring", stiffness: 500, damping: 25 }} className={`flex items-center justify-center w-full ${isMatrix ? 'scale-100 sm:scale-[1.15] origin-center' : ''}`}>
+      <motion.div layout transition={{ type: "spring", stiffness: 500, damping: 28 }} className={`flex items-center justify-center w-full ${isMatrix ? 'scale-100 sm:scale-[1.15] origin-center' : ''}`}>
         {renderIconContent()}
       </motion.div>
     </motion.button>

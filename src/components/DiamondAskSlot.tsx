@@ -70,7 +70,7 @@ export const DiamondAskSlot: React.FC<DiamondAskSlotProps> = ({
       >
         <motion.div
           animate={isHovered ? { rotateY: 360, scale: 1.15 } : { rotateY: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="w-[22px] h-[22px] flex items-center justify-center shrink-0 [perspective:600px]"
         >
           <DiamondIcon size={20} isDark={isDark} />
@@ -97,7 +97,7 @@ export const DiamondAskSlot: React.FC<DiamondAskSlotProps> = ({
         <motion.div
           className="shrink-0 flex items-center justify-center [perspective:800px]"
           animate={isHovered ? { rotateY: 360, scale: 1.15 } : { rotateY: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
           <DiamondIcon size={30} isDark={isDark} />
         </motion.div>

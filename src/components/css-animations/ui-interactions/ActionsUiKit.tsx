@@ -67,7 +67,7 @@ export function QuestionTooltip({ theme = 'dark' }: { theme?: 'dark' | 'light' }
             initial={{ opacity: 0, y: 6, scale: 0.9 }}
             animate={{ opacity: 1, y: -6, scale: 1 }}
             exit={{ opacity: 0, y: 4, scale: 0.9 }}
-            transition={{ type: 'spring', bounce: 0.3, duration: 0.35 }}
+            transition={{ type: 'spring', bounce: 0.3, duration: 0.25 }}
             className={`absolute -top-9 px-3 py-1.5 rounded-xl border text-[11px] shadow-xl whitespace-nowrap z-20 pointer-events-none ${
               theme === 'dark' ? 'bg-[#222] border-neutral-700 text-neutral-200' : 'bg-neutral-900 border-neutral-800 text-white'
             }`}
@@ -217,7 +217,7 @@ export function SegmentedABTabs({ theme = 'dark' }: { theme?: 'dark' | 'light' }
             {isSelected && (
               <motion.div
                 layoutId="ab-tab-pill"
-                transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
                 className={`absolute inset-0 rounded-xl shadow-md ${
                   theme === 'dark' ? 'bg-neutral-200' : 'bg-neutral-900'
                 }`}
@@ -338,7 +338,7 @@ export function MenuDotsExpand({ theme = 'dark' }: { theme?: 'dark' | 'light' })
     >
       <motion.div
         animate={pulse ? { scale: [1, 1.3, 1] } : {}}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.25 }}
       >
         <MoreHorizontal className="w-5 h-5 text-neutral-400 hover:text-white" />
       </motion.div>
@@ -361,7 +361,7 @@ export function CompactModeSwitch({ theme = 'dark' }: { theme?: 'dark' | 'light'
         {mode === 'grid' && (
           <motion.div
             layoutId="mode-switch-pill"
-            transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+            transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
             className={`absolute inset-0 rounded-xl ${theme === 'dark' ? 'bg-neutral-700' : 'bg-white shadow-sm'}`}
           />
         )}
@@ -375,7 +375,7 @@ export function CompactModeSwitch({ theme = 'dark' }: { theme?: 'dark' | 'light'
         {mode === 'list' && (
           <motion.div
             layoutId="mode-switch-pill"
-            transition={{ type: 'spring', bounce: 0.2, duration: 0.35 }}
+            transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
             className={`absolute inset-0 rounded-xl ${theme === 'dark' ? 'bg-neutral-700' : 'bg-white shadow-sm'}`}
           />
         )}

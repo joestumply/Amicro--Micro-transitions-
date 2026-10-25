@@ -66,7 +66,7 @@ export function DiaTextReveal({
   text,
   colors = BLUE_SHADES_PALETTE,
   textColor = 'currentColor',
-  duration = 1.6,
+  duration = 0.25,
   delay = 0.1,
   repeat = false,
   repeatDelay = 0.5,
@@ -206,7 +206,7 @@ export function DiaTextReveal({
         ...style,
       }}
       animate={animatedW != null ? { width: animatedW } : undefined}
-      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
       {...props}
     >
       {texts[activeIndex]}

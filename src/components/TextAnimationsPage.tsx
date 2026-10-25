@@ -58,7 +58,7 @@ export function FocusBlur() {
             href={item.href}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            className="relative font-semibold text-lg sm:text-2xl no-underline transition-all duration-300 select-none outline-none"
+            className="relative font-semibold text-lg sm:text-2xl no-underline transition-all duration-250 select-none outline-none"
             style={{
               filter: isInactive ? 'blur(4px)' : 'none',
               opacity: isInactive ? 0.4 : 1,
@@ -72,7 +72,7 @@ export function FocusBlur() {
                   initial={{ opacity: 0, scale: 1.3 }}
                   animate={{ opacity: 1, scale: 1.1 }}
                   exit={{ opacity: 0, scale: 1.3 }}
-                  transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+                  transition={{ type: 'spring', stiffness: 350, damping: 28 }}
                   className="absolute inset-0 border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg pointer-events-none z-0"
                   style={{ margin: '-4px -8px' }}
                 />

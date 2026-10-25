@@ -49,7 +49,7 @@ export function DitherChartsGrid({ theme, showToast, triggerHaptic }: DitherChar
           return (
             <div 
               key={item.id} 
-              className={`relative group rounded-2xl flex flex-col items-center justify-between p-3.5 transition-all duration-300 border ${
+              className={`relative group rounded-2xl flex flex-col items-center justify-between p-3.5 transition-all duration-250 border ${
                 theme === 'dark' 
                   ? 'bg-[#181818] border-white/5 hover:bg-[#1f1f1f] shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]' 
                   : 'bg-white border-neutral-100 hover:shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:border-neutral-200/50'

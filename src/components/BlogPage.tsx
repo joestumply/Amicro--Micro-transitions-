@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Share2, Check, X } from 'lucide-react';
 import { useWebHaptics } from '../hooks/useWebHaptics';
 import { BLOG_POSTS, BlogPost } from '../data/blogsData';
+import { applyRouteMeta } from '../utils/documentMeta';
+
+const postFromPath = (pathname: string) => {
+  const slug = pathname.match(/^\/blogs?\/([^/]+)/i)?.[1]?.toLowerCase();
+  return slug ? BLOG_POSTS.find((p) => p.slug === slug) ?? null : null;
+};
 
 interface BlogPageProps {
   theme: 'dark' | 'light';
@@ -16,7 +22,18 @@ export function BlogPage({
   showToast,
   triggerHaptic,
 }: BlogPageProps) {
-  const [activePost, setActivePost] = useState<BlogPost | null>(null);
+  const [activePost, setActivePost] = useState<BlogPost | null>(() => postFromPath(window.location.pathname));
+
+  // Deep links (/blog/<slug>) and back/forward open or close the reader
+  useEffect(() => {
+    const onPop = () => setActivePost(postFromPath(window.location.pathname));
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
+  useEffect(() => {
+    applyRouteMeta(activePost ? `/blog/${activePost.slug}` : '/blog');
+  }, [activePost]);
   const [copiedLink, setCopiedLink] = useState(false);
   const { trigger } = useWebHaptics();
   const isDark = theme === 'dark';

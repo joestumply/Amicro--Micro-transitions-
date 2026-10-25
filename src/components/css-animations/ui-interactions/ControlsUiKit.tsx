@@ -149,13 +149,13 @@ export function LightDarkMorphToggle({ theme = 'dark' }: { theme?: 'dark' | 'lig
     <motion.button
       whileTap={{ scale: 0.9 }}
       onClick={() => setIsDark(!isDark)}
-      className={`relative w-14 h-14 rounded-2xl border-2 flex items-center justify-center transition-colors duration-300 cursor-pointer shadow-md ${
+      className={`relative w-14 h-14 rounded-2xl border-2 flex items-center justify-center transition-colors duration-250 cursor-pointer shadow-md ${
         isDark ? 'bg-[#181818] border-white/15' : 'bg-amber-50/80 border-amber-200'
       }`}
     >
       <motion.div
         animate={{ rotate: isDark ? 180 : 0, scale: [0.85, 1.05, 1] }}
-        transition={{ type: 'spring', stiffness: 200, damping: 12 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 28 }}
         className="flex items-center justify-center"
       >
         {isDark ? (
@@ -183,7 +183,7 @@ export function ProgressStepper({ theme = 'dark' }: { theme?: 'dark' | 'light' }
         {/* Filled active track */}
         <motion.div
           animate={{ width: `${((step - 1) / (steps.length - 1)) * 100}%` }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="absolute top-1/2 left-0 h-1 -translate-y-1/2 rounded-full bg-indigo-500"
         />
 
@@ -307,7 +307,7 @@ export function DatePositionSelector({ theme = 'dark' }: { theme?: 'dark' | 'lig
             {isSelected && (
               <motion.div
                 layoutId="day-pill"
-                transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
                 className={`absolute inset-0 rounded-full shadow-md ${
                   theme === 'dark' ? 'bg-neutral-200' : 'bg-neutral-900'
                 }`}
@@ -347,7 +347,7 @@ export function PaginationNumberedBubble({ theme = 'dark' }: { theme?: 'dark' | 
             {isActive && (
               <motion.div
                 layoutId="page-bubble"
-                transition={{ type: 'spring', bounce: 0.25, duration: 0.45 }}
+                transition={{ type: 'spring', bounce: 0.25, duration: 0.25 }}
                 className={`absolute inset-0 -top-1.5 rounded-xl shadow-lg ${
                   theme === 'dark' ? 'bg-indigo-500 text-white' : 'bg-neutral-900 text-white'
                 }`}

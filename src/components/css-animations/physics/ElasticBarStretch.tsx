@@ -18,7 +18,7 @@ export function Area6({
 
   return (
     <div 
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 ${
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 ${
         theme === 'dark' ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       } ${className}`}
       onMouseEnter={trigger === "hover" ? () => setHoverKey(k => k + 1) : undefined}
@@ -36,7 +36,7 @@ export function Area6({
           100% { width: 50px; height: 32px; }
         }
         .bar-anim {
-          animation: bar_stretch 0.35s ease-in-out 0.2s both, bar_shrink 0.65s ease-in-out 0.55s forwards;
+          animation: bar_stretch 0.15s ease-in-out 0.09s both, bar_shrink 0.28s ease-in-out 0.24s forwards;
         }
       `}</style>
       <div className="absolute inset-0 flex items-center justify-center area6-scene">

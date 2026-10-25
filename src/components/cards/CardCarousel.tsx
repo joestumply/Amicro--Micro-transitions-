@@ -74,7 +74,7 @@ export const CardCarousel = React.memo(function CardCarousel({
         <motion.div 
           className="flex w-fit items-center"
           animate={{ x: -activeIndex * slideWidth }}
-          transition={{ type: 'spring', bounce: 0.1, duration: 0.8 }}
+          transition={{ type: 'spring', bounce: 0.1, duration: 0.25 }}
         >
           {images.map((item, i) => {
             const isActive = activeIndex === i;
@@ -94,10 +94,10 @@ export const CardCarousel = React.memo(function CardCarousel({
                   scale: targetScale, 
                   y: targetY 
                 }}
-                transition={{ type: 'spring', bounce: 0.2, duration: 0.8 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.25 }}
               >
                 <div 
-                  className={`text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-300 ${isActive ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-75 text-neutral-400'}`} 
+                  className={`text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-250 ${isActive ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-75 text-neutral-400'}`} 
                 >
                   {isMonochrome ? `Card ${i + 1}` : item.title}
                 </div>
@@ -136,7 +136,7 @@ export const CardCarousel = React.memo(function CardCarousel({
             <div 
               key={i} 
               onClick={(e) => toSlide(e, i)}
-              className={`rounded-full cursor-pointer h-1 transition-all duration-300 ${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}`}>
+              className={`rounded-full cursor-pointer h-1 transition-all duration-250 ${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}`}>
             </div>
           ))}
         </div>

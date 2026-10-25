@@ -14,8 +14,8 @@ export function MonoRoundedSankeyChart({ theme = 'dark', compact = false }: Mono
     <motion.div
       initial={{ opacity: 0, scale: 0.98, y: 6 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative w-full rounded-3xl transition-all duration-300 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative w-full rounded-3xl transition-all duration-250 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
         compact ? 'aspect-[16/10] min-h-[220px] w-full' : 'min-h-[290px]'
       } ${
         isDark ? 'bg-[#141414] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/20' : 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-neutral-200 text-black hover:border-neutral-300'
@@ -41,7 +41,7 @@ export function MonoRoundedSankeyChart({ theme = 'dark', compact = false }: Mono
       </div>
 
       {/* Main Stage */}
-      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-3 transition-colors min-h-0 duration-300 flex items-center justify-between gap-4 ${
+      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-3 transition-colors min-h-0 duration-250 flex items-center justify-between gap-4 ${
         isDark ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       }`}>
         {/* Left Source Nodes */}
@@ -82,7 +82,7 @@ export function MonoRoundedSankeyChart({ theme = 'dark', compact = false }: Mono
             strokeWidth={activeChannel === 'mempool' ? 18 : 12}
             strokeOpacity={activeChannel === 'rpc' ? 0.08 : isDark ? 0.35 : 0.22}
             strokeLinecap="round"
-            className="transition-all duration-300"
+            className="transition-all duration-250"
           />
           <path
             d="M 90,84 C 160,84 180,60 250,60"
@@ -91,7 +91,7 @@ export function MonoRoundedSankeyChart({ theme = 'dark', compact = false }: Mono
             strokeWidth={activeChannel === 'rpc' ? 16 : 10}
             strokeOpacity={activeChannel === 'mempool' ? 0.08 : isDark ? 0.28 : 0.18}
             strokeLinecap="round"
-            className="transition-all duration-300"
+            className="transition-all duration-250"
           />
         </svg>
 

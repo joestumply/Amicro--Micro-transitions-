@@ -83,7 +83,7 @@ export function CategoryPillBar({
         <div
           role="tablist"
           aria-label="Component categories"
-          className={`relative inline-flex items-center p-1 2xl:p-1.5 rounded-full border transition-all duration-300 gap-1 shrink-0 ${
+          className={`relative inline-flex items-center p-1 2xl:p-1.5 rounded-full border transition-all duration-250 gap-1 shrink-0 ${
             isDark
               ? 'bg-[#121214] border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.04)]'
               : 'bg-white border-neutral-200/90 shadow-[0_2px_12px_rgba(0,0,0,0.04)]'

@@ -11,7 +11,7 @@ const TARGETS = [
 
 function AnimatedPercent({ value }: { value: number }) {
   const prefersReducedMotion = useReducedMotion();
-  const spring = useSpring(value, { stiffness: 180, damping: 24 });
+  const spring = useSpring(value, { stiffness: 220, damping: 28 });
   const display = useTransform(spring, (current) => Math.round(current) + '%');
 
   useEffect(() => {

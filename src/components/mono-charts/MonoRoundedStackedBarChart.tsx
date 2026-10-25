@@ -41,8 +41,8 @@ export function MonoRoundedStackedBarChart({ theme = 'dark', compact = false }: 
     <motion.div
       initial={{ opacity: 0, scale: 0.98, y: 6 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative w-full rounded-3xl transition-all duration-300 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative w-full rounded-3xl transition-all duration-250 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
         compact ? 'aspect-[16/10] min-h-[220px] w-full' : 'min-h-[290px]'
       } ${
         isDark ? 'bg-[#141414] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/20' : 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-neutral-200 text-black hover:border-neutral-300'
@@ -67,7 +67,7 @@ export function MonoRoundedStackedBarChart({ theme = 'dark', compact = false }: 
       </div>
 
       {/* Main Stage */}
-      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-2 transition-colors min-h-0 duration-300 touch-pan-y ${
+      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-2 transition-colors min-h-0 duration-250 touch-pan-y ${
         isDark ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       }`}>
         <ResponsiveContainer width="100%" height="100%">
@@ -76,9 +76,9 @@ export function MonoRoundedStackedBarChart({ theme = 'dark', compact = false }: 
             <XAxis dataKey="label" tickLine={false} axisLine={false} tick={{ fontSize: 10, fill: isDark ? '#71717A' : '#A1A1AA' }} />
             <YAxis tickLine={false} axisLine={false} tick={{ fontSize: 10, fill: isDark ? '#71717A' : '#A1A1AA' }} />
             <Tooltip content={<DitherChartTooltipContent theme={theme} indicator="dot" />} />
-            <Bar dataKey="defi" name="DeFi & Swaps" stackId="a" fill={isDark ? '#FFFFFF' : '#09090B'} radius={[0, 0, 6, 6]} barSize={compact ? 14 : 18} isAnimationActive={!isMobile} animationDuration={isMobile ? 0 : 700} />
-            <Bar dataKey="transfers" name="System Transfers" stackId="a" fill={isDark ? 'rgba(255,255,255,0.52)' : 'rgba(9,9,11,0.52)'} isAnimationActive={!isMobile} animationDuration={isMobile ? 0 : 700} />
-            <Bar dataKey="oracles" name="Oracles / Governance" stackId="a" fill={isDark ? 'rgba(255,255,255,0.22)' : 'rgba(9,9,11,0.22)'} radius={[6, 6, 0, 0]} isAnimationActive={!isMobile} animationDuration={isMobile ? 0 : 700} />
+            <Bar dataKey="defi" name="DeFi & Swaps" stackId="a" fill={isDark ? '#FFFFFF' : '#09090B'} radius={[0, 0, 6, 6]} barSize={compact ? 14 : 18} isAnimationActive={!isMobile} animationDuration={isMobile ? 0 : 280} />
+            <Bar dataKey="transfers" name="System Transfers" stackId="a" fill={isDark ? 'rgba(255,255,255,0.52)' : 'rgba(9,9,11,0.52)'} isAnimationActive={!isMobile} animationDuration={isMobile ? 0 : 280} />
+            <Bar dataKey="oracles" name="Oracles / Governance" stackId="a" fill={isDark ? 'rgba(255,255,255,0.22)' : 'rgba(9,9,11,0.22)'} radius={[6, 6, 0, 0]} isAnimationActive={!isMobile} animationDuration={isMobile ? 0 : 280} />
           </BarChart>
         </ResponsiveContainer>
       </div>

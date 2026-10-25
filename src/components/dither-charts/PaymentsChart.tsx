@@ -40,7 +40,7 @@ const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(
 
 function AnimatedDollar({ value }: { value: number }) {
   const prefersReducedMotion = useReducedMotion();
-  const spring = useSpring(value, { stiffness: 190, damping: 27, mass: 0.7 });
+  const spring = useSpring(value, { stiffness: 190, damping: 20, mass: 0.7 });
   const display = useTransform(spring, (current) => 
     '$' + Math.round(current).toLocaleString('en-US')
   );
@@ -353,7 +353,7 @@ export function PaymentsChart() {
               <motion.div 
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
+                transition={{ duration: 0.25, ease: [0.19, 1, 0.22, 1] }}
                 className="w-full bg-[#FAFAFB] rounded-[14px] p-1.5 flex flex-col gap-1.5 shadow-[0_24px_50px_-34px_rgba(15,23,42,0.3)]"
               >
                 {/* Top Card */}
@@ -488,7 +488,7 @@ export function PaymentsChart() {
                       <motion.div 
                         layoutId="activePeriodPayment"
                         className="absolute inset-0 bg-white rounded-[7px] shadow-[0_0_0_1px_rgba(25,28,33,0.05),0_1px_2px_rgba(25,28,33,0.08)] z-0"
-                        transition={{ duration: 0.32, bounce: 0.2, type: "spring" }}
+                        transition={{ duration: 0.25, bounce: 0.2, type: "spring" }}
                       />
                     )}
                     <span className="relative z-10">{p.name}</span>

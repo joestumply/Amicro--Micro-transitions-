@@ -17,7 +17,7 @@ export const CardArc7 = React.memo(function CardArc7({
   angle = 45,
   gap = 110,
   yOffset = 30,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-400 dark:bg-neutral-800',
   className = '',
@@ -52,7 +52,7 @@ export const CardArc7 = React.memo(function CardArc7({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

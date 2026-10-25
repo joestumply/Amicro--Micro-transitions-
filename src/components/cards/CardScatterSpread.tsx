@@ -42,7 +42,7 @@ export const CardScatterSpread = React.memo(function CardScatterSpread({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

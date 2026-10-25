@@ -20,7 +20,7 @@ export function CtaSection({
   return (
     <section className="relative z-10 w-full max-w-[1360px] 2xl:max-w-[1480px] mx-auto px-4 sm:px-8 lg:px-12 my-8 sm:my-12 2xl:my-16 select-none">
       <div
-        className={`relative w-full rounded-[24px] sm:rounded-[32px] 2xl:rounded-[40px] py-10 sm:py-14 md:py-16 2xl:py-20 px-6 sm:px-12 2xl:px-16 border overflow-hidden transition-all duration-300 flex flex-col items-center text-center ${
+        className={`relative w-full rounded-[24px] sm:rounded-[32px] 2xl:rounded-[40px] py-10 sm:py-14 md:py-16 2xl:py-20 px-6 sm:px-12 2xl:px-16 border overflow-hidden transition-all duration-250 flex flex-col items-center text-center ${
           theme === 'dark'
             ? 'bg-[#09090b] border-white/[0.1] shadow-[0_8px_32px_rgba(0,0,0,0.65)] text-white'
             : 'bg-[#0c0c0e] border-neutral-800 shadow-[0_8px_32px_rgba(0,0,0,0.2)] text-white'
@@ -29,6 +29,10 @@ export function CtaSection({
         {/* Halftone texture background from amicro cta .jpg */}
         <img
           src="/amicro-cta.jpg"
+          width={626}
+          height={352}
+          loading="lazy"
+          decoding="async"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-45 mix-blend-screen pointer-events-none select-none"
@@ -61,7 +65,7 @@ export function CtaSection({
             }}
             whileHover={{ y: -1, scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+            transition={{ type: 'spring', stiffness: 450, damping: 28 }}
             className="inline-flex items-center justify-center gap-2 h-[40px] px-5 rounded-full text-[13px] font-semibold cursor-pointer transition-colors duration-200 bg-[#ededed] text-[#09090b] border border-transparent hover:bg-white shadow-xs"
           >
             <span>Browse Components</span>
@@ -76,7 +80,7 @@ export function CtaSection({
             onClick={() => triggerHaptic?.('medium')}
             whileHover={{ y: -1, scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+            transition={{ type: 'spring', stiffness: 450, damping: 28 }}
             className="inline-flex items-center justify-center gap-2 h-[40px] px-4 rounded-full text-[13px] font-medium no-underline transition-colors duration-200 cursor-pointer border bg-[#141417] border-white/[0.12] hover:bg-[#1a1a1f] text-neutral-200 hover:text-white shadow-xs"
           >
             <svg

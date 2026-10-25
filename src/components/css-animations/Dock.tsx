@@ -31,7 +31,7 @@ function DockItem({
   });
 
   const sizeSync = useTransform(distance, [-80, 0, 80], [28, 44, 28]);
-  const size = useSpring(sizeSync, { mass: 0.1, stiffness: 220, damping: 16 });
+  const size = useSpring(sizeSync, { mass: 0.1, stiffness: 220, damping: 28 });
 
   return (
     <Reorder.Item 
@@ -42,7 +42,7 @@ function DockItem({
     >
       <div 
         ref={ref}
-        className={`flex h-full w-full items-center justify-center rounded-[10px] p-0.5 shadow-sm transition-all duration-300 ${
+        className={`flex h-full w-full items-center justify-center rounded-[10px] p-0.5 shadow-sm transition-all duration-250 ${
           theme === 'dark'
             ? 'border border-neutral-700/80 bg-neutral-800 hover:bg-neutral-700'
             : 'border border-neutral-200 bg-white hover:bg-neutral-50 shadow-sm'
@@ -68,7 +68,7 @@ export function Dock({ theme = 'dark', className = '' }: DockProps) {
 
   return (
     <div 
-      className={`box-content flex h-[32px] w-fit items-end gap-1 rounded-xl p-1.5 transition-all duration-300 ${
+      className={`box-content flex h-[32px] w-fit items-end gap-1 rounded-xl p-1.5 transition-all duration-250 ${
         theme === 'dark' 
           ? 'border border-neutral-800 bg-[#141414] shadow-md shadow-black/30' 
           : 'border border-neutral-200 bg-neutral-100 shadow-sm'

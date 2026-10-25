@@ -14,7 +14,7 @@ const BASE_VALUES = [42, 68, 55, 92, 85, 110, 74];
 
 function AnimatedValue({ value }: { value: number }) {
   const prefersReducedMotion = useReducedMotion();
-  const spring = useSpring(value, { stiffness: 190, damping: 27, mass: 0.7 });
+  const spring = useSpring(value, { stiffness: 190, damping: 20, mass: 0.7 });
   const display = useTransform(spring, (current) => Math.round(current).toLocaleString('en-US'));
 
   useEffect(() => {

@@ -42,7 +42,7 @@ export const CardWheelFan = React.memo(function CardWheelFan({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

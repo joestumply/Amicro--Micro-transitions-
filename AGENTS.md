@@ -78,9 +78,11 @@ Adhere strictly to the Amicro Design System (`.agents/skills/amicro-design-syste
   - 24"+ Desktop (>1536px): 4 columns (`2xl:grid-cols-4`) for cards / 6 columns for loaders
 
 ### 3. Motion Physics
-- Transition curve: `ease: [0.16, 1, 0.3, 1]`
-- Duration: 200ms–350ms for micro-transitions
-- Spring configurations: `stiffness: 400, damping: 25` for hover feedback
+- Transition curve: `ease: [0.16, 1, 0.3, 1]` (never `easeIn` on UI)
+- Duration: **every one-shot animation < 300ms** (150–250ms typical, 280ms max; exits shorter than entries). Infinite loops (spinners/loaders) are exempt.
+- Spring configurations: `stiffness: 400, damping: 28` for hover feedback (settles in ~0.29s; underdamped settle ≈ 8·mass/damping)
+- Stagger: `Math.min(index * 0.015, 0.05)`; Recharts `animationDuration={280}`
+- Full rules: `.agents/skills/amicro-design-system/SKILL.md` § 4
 
 ---
 

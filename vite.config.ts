@@ -114,14 +114,28 @@ export default defineConfig(() => {
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
-              if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler') || id.includes('motion')) {
-                return 'vendor-framework';
+              // Order matters: many package paths contain "react" (lucide-react, shaders-react…),
+              // so match specific packages before the framework catch-all.
+              const p = id.replace(/\\/g, '/');
+              if (p.includes('/@paper-design/')) {
+                return 'vendor-shaders';
               }
-              if (id.includes('recharts') || id.includes('d3-') || id.includes('victory-vendor')) {
+              if (p.includes('/recharts/') || p.includes('/d3-') || p.includes('/victory-vendor/')) {
                 return 'vendor-charts';
               }
-              if (id.includes('lucide-react')) {
+              if (p.includes('/lucide-react/')) {
                 return 'vendor-icons';
+              }
+              if (
+                p.includes('/react/') ||
+                p.includes('/react-dom/') ||
+                p.includes('/scheduler/') ||
+                p.includes('/motion/') ||
+                p.includes('/motion-dom/') ||
+                p.includes('/motion-utils/') ||
+                p.includes('/framer-motion/')
+              ) {
+                return 'vendor-framework';
               }
             }
           },

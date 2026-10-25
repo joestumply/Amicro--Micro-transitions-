@@ -17,7 +17,7 @@ export const CardLongArc5 = React.memo(function CardLongArc5({
   angle = 15,
   gap = 140,
   yOffset = 20,
-  duration = 0.5,
+  duration = 0.25,
   hoverIntensity = 1,
   cardClassName = 'bg-neutral-400 dark:bg-neutral-800',
   className = '',
@@ -51,7 +51,7 @@ export const CardLongArc5 = React.memo(function CardLongArc5({
         const springConfig = {
           type: "spring",
           stiffness: 180,
-          damping: 20,
+          damping: 23,
           mass: 0.8
         };
 

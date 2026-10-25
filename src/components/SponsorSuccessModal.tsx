@@ -154,7 +154,7 @@ export function SponsorSuccessModal({
               <motion.div
                 initial={{ scale: 0, rotate: -30 }}
                 animate={{ scale: 1, rotate: 0 }}
-                transition={{ type: 'spring', stiffness: 480, damping: 22 }}
+                transition={{ type: 'spring', stiffness: 480, damping: 28 }}
                 className="size-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-4 text-emerald-500 shadow-sm"
               >
                 <Check className="size-7 stroke-[2.5]" />

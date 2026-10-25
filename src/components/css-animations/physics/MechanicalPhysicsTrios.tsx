@@ -21,7 +21,7 @@ export function CardStackPeel({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -71,7 +71,7 @@ export function ElasticTagSnap({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -120,7 +120,7 @@ export function SplitGateReveal({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -169,7 +169,7 @@ export function OrigamiEnvelopeUnfold({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -217,7 +217,7 @@ export function SmartCardDispenser({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -267,7 +267,7 @@ export function CircuitTraceDraw({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -313,7 +313,7 @@ export function HexagonLatticeDraw({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -357,7 +357,7 @@ export function PrismBlockStack({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -401,7 +401,7 @@ export function ModularTileSnap({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -445,7 +445,7 @@ export function RollerBlindDrop({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -490,7 +490,7 @@ export function RibbonBannerSlide({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -533,7 +533,7 @@ export function GeometricIrisShutter({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -575,7 +575,7 @@ export function PendulumBubbleLevel({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -620,7 +620,7 @@ export function KineticTickingMetronome({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -664,7 +664,7 @@ export function NestedOrbitalGimbal({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -705,7 +705,7 @@ export function DualMagnetDipole({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -746,7 +746,7 @@ export function CompassNeedleDeflect({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >

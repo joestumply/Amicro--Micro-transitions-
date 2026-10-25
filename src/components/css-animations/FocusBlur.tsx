@@ -14,7 +14,7 @@ export function FocusBlurDemo({ theme = 'dark' }: { theme?: 'dark' | 'light' }) 
       `}</style>
 
       {/* CSS :has() Typography Blur Grid */}
-      <div className={`w-full rounded-[24px] p-6 sm:p-8 border flex flex-col items-center text-center gap-4 transition-colors duration-300 ${
+      <div className={`w-full rounded-[24px] p-6 sm:p-8 border flex flex-col items-center text-center gap-4 transition-colors duration-250 ${
         theme === 'dark' ? 'bg-[#181818] border-white/10' : 'bg-white border-neutral-200 shadow-sm'
       }`}>
         <span className="text-[11px] font-bold tracking-widest uppercase text-indigo-400">

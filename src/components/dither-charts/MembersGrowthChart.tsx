@@ -19,7 +19,7 @@ const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(
 
 function AnimatedNumber({ value }: { value: number }) {
   const prefersReducedMotion = useReducedMotion();
-  const spring = useSpring(value, { stiffness: 190, damping: 27, mass: 0.7 });
+  const spring = useSpring(value, { stiffness: 190, damping: 20, mass: 0.7 });
   const display = useTransform(spring, (current) => 
     '+' + Math.round(current).toLocaleString('en-US')
   );
@@ -302,7 +302,7 @@ export function MembersGrowthChart() {
                           className="absolute inset-0 overflow-hidden"
                           initial={isMounted ? false : { clipPath: 'inset(0 100% 0 0)', filter: 'blur(9px)', opacity: 0 }}
                           animate={{ clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px)', opacity: 1 }}
-                          transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
+                          transition={{ duration: 0.25, ease: [0.19, 1, 0.22, 1] }}
                         >
                           <canvas ref={canvasRef} className="w-full h-full pointer-events-none" />
                         </motion.div>
@@ -362,7 +362,7 @@ export function MembersGrowthChart() {
                       <motion.div 
                         layoutId="activeRangeMembers"
                         className="absolute inset-0 bg-white rounded-[7px] shadow-[0_0_0_1px_rgba(25,28,33,0.05),0_1px_2px_rgba(25,28,33,0.08)] z-0"
-                        transition={{ duration: 0.32, bounce: 0.2, type: "spring" }}
+                        transition={{ duration: 0.25, bounce: 0.2, type: "spring" }}
                       />
                     )}
                     <span className="relative z-10">{r.name}</span>

@@ -70,7 +70,7 @@ function TierRectangleSlot({
         onClick={() => triggerHaptic?.('light')}
         whileHover={{ y: -2, scale: 1.015 }}
         whileTap={{ scale: 0.98 }}
-        transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+        transition={{ type: 'spring', stiffness: 450, damping: 28 }}
         className={`group relative ${heightClass} w-full rounded-2xl border flex items-center justify-center ${occupiedPaddingClass} no-underline transition-all duration-200 ${
           isDark
             ? 'bg-[#151413] border-white/10 hover:border-white/20 text-white'
@@ -90,6 +90,8 @@ function TierRectangleSlot({
               <img
                 src={slot.logoUrl}
                 alt={slot.companyName}
+                        loading="lazy"
+                        decoding="async"
                 className={`${occupiedLogoClass} rounded-lg object-contain shrink-0`}
               />
             ) : (
@@ -124,7 +126,7 @@ function TierRectangleSlot({
       }}
       whileHover={{ y: -2, scale: 1.015 }}
       whileTap={{ scale: 0.98 }}
-      transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+      transition={{ type: 'spring', stiffness: 450, damping: 28 }}
       className={`group relative ${heightClass} w-full rounded-2xl border border-dashed flex flex-col items-center justify-center p-2.5 text-center transition-all duration-200 cursor-pointer overflow-hidden ${
         isDark
           ? 'bg-[#121214]/40 hover:bg-[#121214]/80 border-white/[0.1] hover:border-white/[0.24] text-neutral-400 hover:text-white'
@@ -287,7 +289,7 @@ export function SponsorSection({
                   onClick={() => triggerHaptic?.('light')}
                   whileHover={{ y: -2, scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+                  transition={{ type: 'spring', stiffness: 450, damping: 28 }}
                   className={`group relative w-full h-full min-h-[148px] rounded-2xl sm:rounded-3xl border flex items-center justify-center p-5 sm:p-7 no-underline transition-all duration-200 ${
                     isMaple
                       ? isDark
@@ -312,6 +314,8 @@ export function SponsorSection({
                         <img
                           src={slot.logoUrl}
                           alt={slot.companyName}
+                        loading="lazy"
+                        decoding="async"
                           className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-contain shrink-0"
                         />
                       ) : (

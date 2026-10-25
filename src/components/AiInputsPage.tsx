@@ -50,7 +50,7 @@ export function AiInputsPage({
   };
 
   return (
-    <div className={`w-full min-h-dvh transition-colors duration-300 pb-20 ${
+    <div className={`w-full min-h-dvh transition-colors duration-250 pb-20 ${
       embedded ? 'bg-transparent text-inherit' : isDark ? 'bg-[#0F0F0F] text-white' : 'bg-[#f8f9fa] text-black'
     }`}>
       

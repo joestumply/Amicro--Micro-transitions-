@@ -77,7 +77,7 @@ export const CardCoverFlow = React.memo(function CardCoverFlow({
                 scale: isActive ? 1.1 : 1 - (absOffset * 0.08),
                 opacity: absOffset > 2 ? 0 : 1 - (absOffset * 0.25)
               }}
-              transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 28 }}
               style={{ zIndex: 100 - absOffset }}
               onClick={(e) => toSlide(e, i)}
             >
@@ -116,7 +116,7 @@ export const CardCoverFlow = React.memo(function CardCoverFlow({
             <div 
               key={i} 
               onClick={(e) => toSlide(e, i)}
-              className={`rounded-full cursor-pointer h-1 transition-all duration-300 ${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}`}>
+              className={`rounded-full cursor-pointer h-1 transition-all duration-250 ${activeIndex === i ? 'w-4 bg-white' : 'w-1 bg-white/30 hover:bg-white/50'}`}>
             </div>
           ))}
         </div>

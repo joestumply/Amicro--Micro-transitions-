@@ -108,6 +108,15 @@ Every component entry in the catalog grid (Buttons, Card Spreads, 3D Carousels, 
 ## 4. Component Micro-Interactions & Haptics
 
 - **Motion**: Use `motion/react` (`framer-motion`) with cubic bezier easing `[0.16, 1, 0.3, 1]` for exponential smooth reveals.
+- **Timing budget (hard rule): every one-shot animation is < 300ms.** This covers hovers, presses, enters, exits, page transitions, toasts, menus, chart draw-ins and component interactions.
+  - Durations: hover/press `0.15–0.2s`, enter `0.25s`, exit `~0.14s` (exits are shorter than entries), absolute max `0.28s`. Tailwind: `duration-150` / `duration-200` / `duration-250` (never `duration-300`+).
+  - Springs: settle within 0.29s. Underdamped settle ≈ `8 × mass / damping`, so with `mass: 1` use `damping >= 28` (hover default: `{ type: 'spring', stiffness: 400, damping: 28 }`). Duration-style springs: `{ type: 'spring', duration: 0.25, bounce: 0.1–0.2 }`.
+  - Stagger: `delay: Math.min(index * 0.015, 0.05)` so a whole grid entrance finishes inside the budget.
+  - Recharts: `animationDuration={280}` (its default is 1500ms).
+  - Multi-step CSS choreographies: each step ≤ 0.28s; scale delays with the durations so the sequence stays in sync.
+  - Exempt: infinite loops (spinners, loaders, ambient `repeat: Infinity` motion), where the value is a loop period, not a transition.
+- **Easing**: entrances/exits use `[0.16, 1, 0.3, 1]` (ease-out); exits may use `[0.25, 0.46, 0.45, 0.94]`. Never `easeIn` on UI.
+- **Reduced motion**: the app is wrapped in `<MotionConfig reducedMotion="user">`; CSS animations are neutralised by the `prefers-reduced-motion` block in `index.css`.
 - **Haptics**: Always trigger `useWebHaptics` hook:
   - Copy Code: `triggerHaptic('success')`
   - Button Click / Tab Change: `triggerHaptic('medium')` or `triggerHaptic('light')`

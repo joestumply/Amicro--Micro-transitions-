@@ -74,7 +74,7 @@ function TierDiamondMark({
       rotateZ: [-25, 5, -1, 0],
       opacity: [0, 1, 1, 1],
       transition: {
-        duration: 0.95,
+        duration: 0.25,
         times: [0, 0.65, 0.85, 1],
         ease: [0.16, 1, 0.3, 1],
       },
@@ -110,7 +110,7 @@ function TierDiamondMark({
           scale: 1.15,
           y: -1,
           transition: {
-            duration: 0.6,
+            duration: 0.25,
             ease: [0.16, 1, 0.3, 1],
           },
         });
@@ -120,7 +120,7 @@ function TierDiamondMark({
           scale: 1,
           y: 0,
           transition: {
-            duration: 0.6,
+            duration: 0.25,
             ease: [0.16, 1, 0.3, 1],
           },
         });
@@ -935,7 +935,7 @@ export function SponsorsPage({
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.25, delay: 0, ease: [0.16, 1, 0.3, 1] }}
               onMouseEnter={() => setIsDiamondCardHovered(true)}
               onMouseLeave={() => setIsDiamondCardHovered(false)}
               onClick={() => {
@@ -1088,7 +1088,7 @@ export function SponsorsPage({
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.07, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.25, delay: 0.07, ease: [0.16, 1, 0.3, 1] }}
               onClick={() => {
                 triggerHaptic?.('medium');
                 if (onOpenSponsorForm) {
@@ -1191,7 +1191,7 @@ export function SponsorsPage({
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.25, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
               onClick={() => {
                 triggerHaptic?.('medium');
                 if (onOpenSponsorForm) {
@@ -1594,7 +1594,7 @@ export function SponsorsPage({
               onClick={() => triggerHaptic?.('light')}
               whileHover={{ y: -2, scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 450, damping: 28 }}
               className={`group relative w-full min-h-[124px] sm:min-h-[132px] rounded-[16px] flex flex-col items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-center no-underline transition-all duration-200 ${isDark
                 ? 'bg-[#141312] outline -outline-offset-1 outline-white/[0.03] hover:outline-white/10 hover:bg-[#181716]'
                 : 'bg-white border border-neutral-200 hover:border-neutral-300 shadow-xs hover:bg-neutral-50/50'
@@ -1634,7 +1634,7 @@ export function SponsorsPage({
               onClick={() => triggerHaptic?.('light')}
               whileHover={{ y: -2, scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 450, damping: 28 }}
               className={`group relative w-full min-h-[124px] sm:min-h-[132px] rounded-[16px] flex flex-col items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-center no-underline transition-all duration-200 ${isDark
                 ? 'bg-[#141312] outline -outline-offset-1 outline-white/[0.03] hover:outline-white/10 hover:bg-[#181716]'
                 : 'bg-white border border-neutral-200 hover:border-neutral-300 shadow-xs hover:bg-neutral-50/50'
@@ -1688,7 +1688,7 @@ export function SponsorsPage({
               onClick={() => triggerHaptic?.('light')}
               whileHover={{ y: -2, scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 450, damping: 28 }}
               className={`group relative w-full min-h-[124px] sm:min-h-[132px] rounded-[16px] flex flex-col items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-center no-underline transition-all duration-200 ${isDark
                 ? 'bg-[#141312] outline -outline-offset-1 outline-white/[0.03] hover:outline-white/10 hover:bg-[#181716]'
                 : 'bg-white border border-neutral-200 hover:border-neutral-300 shadow-xs hover:bg-neutral-50/50'
@@ -1747,7 +1747,7 @@ export function SponsorsPage({
               onClick={() => triggerHaptic?.('light')}
               whileHover={{ y: -2, scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 450, damping: 28 }}
               className={`group relative w-full min-h-[124px] sm:min-h-[132px] rounded-[16px] flex flex-col items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-center no-underline transition-all duration-200 ${isDark
                 ? 'bg-[#141312] outline -outline-offset-1 outline-white/[0.03] hover:outline-white/10 hover:bg-[#181716]'
                 : 'bg-white border border-neutral-200 hover:border-neutral-300 shadow-xs hover:bg-neutral-50/50'
@@ -1794,7 +1794,7 @@ export function SponsorsPage({
               onClick={() => triggerHaptic?.('light')}
               whileHover={{ y: -2, scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 450, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 450, damping: 28 }}
               className={`group relative w-full min-h-[124px] sm:min-h-[132px] rounded-[16px] flex flex-col items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-center no-underline transition-all duration-200 ${isDark
                 ? 'bg-[#141312] outline -outline-offset-1 outline-white/[0.03] hover:outline-white/10 hover:bg-[#181716]'
                 : 'bg-white border border-neutral-200 hover:border-neutral-300 shadow-xs hover:bg-neutral-50/50'

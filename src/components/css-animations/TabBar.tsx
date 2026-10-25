@@ -30,7 +30,7 @@ export function TabBar({ theme = "dark", className = "" }: TabBarProps) {
           >
             <motion.div
               layout
-              transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.25 }}
               className={`flex items-center justify-center overflow-hidden py-[8px] transition-all duration-200 ease-in-out border ${
                 isActive 
                   ? (theme === "dark" 
@@ -55,7 +55,7 @@ export function TabBar({ theme = "dark", className = "" }: TabBarProps) {
                   initial={{ opacity: 0, width: 0, marginLeft: 0 }}
                   animate={{ opacity: 1, width: "auto", marginLeft: 8 }}
                   exit={{ opacity: 0, width: 0, marginLeft: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
                   className="flex items-center overflow-hidden"
                 >
                   <span className="whitespace-nowrap text-[13px] font-semibold">

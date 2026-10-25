@@ -21,7 +21,7 @@ export function NeonSignDraw({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -38,8 +38,8 @@ export function NeonSignDraw({
           --sl: 240px;
           stroke-dasharray: 240px 240px;
           animation: 
-            neon_draw_line 1.2s ease-in-out 0s both, 
-            neon_clear_line 1.2s ease-in-out 1.4s forwards;
+            neon_draw_line 0.28s ease-in-out 0s both, 
+            neon_clear_line 0.28s ease-in-out 0.33s forwards;
         }
       `}</style>
       <div key={activeKey} className="relative w-[130px] h-[65px] flex items-center justify-center">
@@ -71,7 +71,7 @@ export function SuddenBrake({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -88,11 +88,11 @@ export function SuddenBrake({
           100% { transform: rotate(0deg); }
         }
         .brake-car-wrapper {
-          animation: brake_translate 0.75s cubic-bezier(0, 0.7, 0.6, 1) 0s both;
+          animation: brake_translate 0.18s cubic-bezier(0, 0.7, 0.6, 1) 0s both;
         }
         .brake-car-body {
           transform-origin: left bottom;
-          animation: brake_rotate 0.9s ease-in-out 0.65s both;
+          animation: brake_rotate 0.21s ease-in-out 0.15s both;
         }
       `}</style>
       <div key={activeKey} className="relative w-[130px] h-[75px] flex items-center justify-center overflow-hidden">
@@ -136,7 +136,7 @@ export function RollingTumble({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -184,7 +184,7 @@ export function PageTurnCurl({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -235,7 +235,7 @@ export function ShutterStepBlocks({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -284,7 +284,7 @@ export function InertiaSkidStop({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >

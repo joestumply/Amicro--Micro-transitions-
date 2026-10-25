@@ -26,7 +26,7 @@ export function AnimatedStarCounter({
 
   useEffect(() => {
     const controls = animate(0, target, {
-      duration: 2,
+      duration: 0.25,
       ease: [0.16, 1, 0.3, 1], // easeOutExpo: fast kickoff, smooth deceleration at the end
       onUpdate: (latest) => {
         setDisplayValue(Math.round(latest));

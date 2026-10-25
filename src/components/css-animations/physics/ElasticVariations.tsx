@@ -19,7 +19,7 @@ export function BlindPull({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -99,7 +99,7 @@ export function BalanceScale({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -173,7 +173,7 @@ export function GelatinWobble({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -226,7 +226,7 @@ export function DominoChain({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -280,7 +280,7 @@ export function MagneticDisks({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >
@@ -344,7 +344,7 @@ export function FanFold({
 
   return (
     <div
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 bg-transparent ${className}`}
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 bg-transparent ${className}`}
       onMouseEnter={trigger === 'hover' ? () => setHoverKey((k) => k + 1) : undefined}
       onClick={trigger === 'click' ? () => setHoverKey((k) => k + 1) : undefined}
     >

@@ -146,8 +146,8 @@ export function MorphingShapesPage({
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.32,
-                delay: Math.min(index * 0.02, 0.25),
+                duration: 0.25,
+                delay: Math.min(index * 0.015, 0.05),
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="w-full"
@@ -159,7 +159,7 @@ export function MorphingShapesPage({
                 >
                   {/* Live Interactive Preview Box */}
                   <div
-                    className={`relative aspect-[16/10] w-full overflow-hidden rounded-2xl sm:rounded-3xl border transition-all duration-300 flex items-center justify-center p-4 sm:p-6 ${
+                    className={`relative aspect-[16/10] w-full overflow-hidden rounded-2xl sm:rounded-3xl border transition-all duration-250 flex items-center justify-center p-4 sm:p-6 ${
                       isDark
                         ? "bg-black border-white/[0.07] group-hover/card:border-white/[0.18] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
                         : "bg-[#f5f6f8] border-neutral-200/80 group-hover/card:border-neutral-300 shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]"

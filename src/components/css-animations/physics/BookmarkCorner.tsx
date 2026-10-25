@@ -18,7 +18,7 @@ export function Bookmark({
 
   return (
     <div 
-      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-300 ${
+      className={`relative w-full h-full rounded-2xl overflow-hidden flex justify-center items-center cursor-pointer transition-all duration-250 ${
         theme === 'dark' ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       } ${className}`}
       onMouseEnter={trigger === "hover" ? () => setHoverKey(k => k + 1) : undefined}
@@ -52,11 +52,11 @@ export function Bookmark({
           inset: 0;
           background-color: ${theme === 'dark' ? '#262626' : '#eff6ff'};
           border-radius: 50%;
-          animation: bookmark-scale 0.8s cubic-bezier(0.7, 0.01, 0.23, 1) 0.4s both;
+          animation: bookmark-scale 0.22s cubic-bezier(0.7, 0.01, 0.23, 1) 0.11s both;
         }
         .bookmark-scene__bg--alt {
           background-color: ${theme === 'dark' ? '#1f1f1f' : '#f8f9fa'};
-          animation-delay: 2.6s;
+          animation-delay: 0.73s;
         }
         .bookmark-marks {
           --s: 66px;
@@ -73,7 +73,7 @@ export function Bookmark({
           inset: 0;
         }
         .bookmark-marks__main {
-          animation: bookmark-up 0.55s cubic-bezier(0.75, 0.01, 0.24, 0.98) 2.6s both;
+          animation: bookmark-up 0.15s cubic-bezier(0.75, 0.01, 0.24, 0.98) 0.73s both;
         }
         .bookmark-mark {
           --c: #3b82f6;
@@ -116,29 +116,29 @@ export function Bookmark({
         .bookmark-mark--1 {
           --c: #1d4ed8;
           animation:
-            bookmark-up 0.55s cubic-bezier(0.75, 0.01, 0.24, 0.98) 0s both,
-            bookmark-reset 0.01s ease-out 1s forwards,
-            bookmark-color 1s linear 2.6s forwards;
+            bookmark-up 0.15s cubic-bezier(0.75, 0.01, 0.24, 0.98) 0s both,
+            bookmark-reset 0s ease-out 0.28s forwards,
+            bookmark-color 0.28s linear 0.73s forwards;
         }
         .bookmark-mark--2 {
           --c: #60a5fa;
           --z: 20deg;
           top: 0%;
           transform-origin: top center;
-          animation: bookmark-down 0.7s cubic-bezier(0.7, 0.01, 0.23, 1) 0.35s both;
+          animation: bookmark-down 0.2s cubic-bezier(0.7, 0.01, 0.23, 1) 0.1s both;
         }
         .bookmark-mark--3 {
           --c: #3b82f6;
           --z: 12deg;
           top: 0%;
           transform-origin: top center;
-          animation: bookmark-down 0.7s cubic-bezier(0.7, 0.01, 0.23, 1) 0.5s both;
+          animation: bookmark-down 0.2s cubic-bezier(0.7, 0.01, 0.23, 1) 0.14s both;
         }
         .bookmark-mark--4 {
           --c: #2563eb;
           --z: 0deg;
           transform-origin: top center;
-          animation: bookmark-down 0.7s cubic-bezier(0.7, 0.01, 0.23, 1) 0.65s both;
+          animation: bookmark-down 0.2s cubic-bezier(0.7, 0.01, 0.23, 1) 0.18s both;
         }
         @keyframes bookmark-kira {
           from, to { transform: scale(0); }
@@ -153,12 +153,12 @@ export function Bookmark({
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
-          animation: bookmark-kira 0.6s ease-in-out var(--delay, 0s) both;
+          animation: bookmark-kira 0.17s ease-in-out var(--delay, 0s) both;
         }
-        .bookmark-kira--1 { --delay: 0.8s; top: 17%; left: 2%; }
-        .bookmark-kira--2 { --delay: 1s; top: 48%; right: 2%; }
-        .bookmark-kira--3 { --delay: 1.2s; top: 62%; left: 10%; }
-        .bookmark-kira--4 { --delay: 1.4s; top: 6%; right: 6%; }
+        .bookmark-kira--1 { --delay: 0.22s; top: 17%; left: 2%; }
+        .bookmark-kira--2 { --delay: 0.28s; top: 48%; right: 2%; }
+        .bookmark-kira--3 { --delay: 0.34s; top: 62%; left: 10%; }
+        .bookmark-kira--4 { --delay: 0.39s; top: 6%; right: 6%; }
       `}</style>
       <div className="absolute inset-0 flex items-center justify-center bookmark-scene-wrapper">
         <div key={activeKey} className="bookmark-box">

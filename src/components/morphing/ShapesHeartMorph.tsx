@@ -47,7 +47,7 @@ export function ShapesHeartMorph({
 
   const bounceSpring = shouldReduceMotion
     ? { duration: 0.1 }
-    : { type: "spring", stiffness: 380, damping: 20, mass: 0.8 };
+    : { type: "spring", stiffness: 380, damping: 23, mass: 0.8 };
 
   const heartSpring = shouldReduceMotion
     ? { duration: 0.1 }
@@ -70,7 +70,7 @@ export function ShapesHeartMorph({
               exit={{
                 opacity: 0,
                 scale: 0.2,
-                transition: { duration: 0.35, ease: "easeInOut" },
+                transition: { duration: 0.25, ease: "easeInOut" },
               }}
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
@@ -78,7 +78,7 @@ export function ShapesHeartMorph({
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ ...bounceSpring, delay: 0.05 }}
+                transition={{ ...bounceSpring, delay: 0 }}
                 className="absolute"
                 style={{ top: "18px", left: "22px" }}
               >
@@ -97,7 +97,7 @@ export function ShapesHeartMorph({
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ ...bounceSpring, delay: 0.15 }}
+                transition={{ ...bounceSpring, delay: 0.03 }}
                 className="absolute"
                 style={{ top: "20px", right: "24px" }}
               >
@@ -113,7 +113,7 @@ export function ShapesHeartMorph({
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ ...bounceSpring, delay: 0.25 }}
+                transition={{ ...bounceSpring, delay: 0.06 }}
                 className="absolute"
                 style={{ bottom: "22px", left: "20px" }}
               >
@@ -132,7 +132,7 @@ export function ShapesHeartMorph({
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ ...bounceSpring, delay: 0.35 }}
+                transition={{ ...bounceSpring, delay: 0.09 }}
                 className="absolute"
                 style={{ bottom: "20px", right: "26px" }}
               >
@@ -151,7 +151,7 @@ export function ShapesHeartMorph({
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ ...bounceSpring, delay: 0.45 }}
+                transition={{ ...bounceSpring, delay: 0.12 }}
                 className="absolute"
                 style={{ top: "6px", left: "82px" }}
               >

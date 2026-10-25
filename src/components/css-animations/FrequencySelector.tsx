@@ -16,7 +16,7 @@ export function FrequencySelector({ theme = "dark", className = "" }: FrequencyS
   return (
     <motion.div 
       layout
-      className={`flex w-full max-w-[320px] flex-col overflow-hidden rounded-3xl p-[6px] transition-colors duration-300 ${
+      className={`flex w-full max-w-[320px] flex-col overflow-hidden rounded-3xl p-[6px] transition-colors duration-250 ${
         theme === "dark" 
           ? "bg-[#181818] border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.06)]" 
           : "bg-neutral-200/80 border border-neutral-300/40 shadow-[0_6px_16px_rgba(0,0,0,0.04)]"
@@ -33,7 +33,7 @@ export function FrequencySelector({ theme = "dark", className = "" }: FrequencyS
             filter: expanded ? "blur(4px)" : "blur(0px)", 
             opacity: expanded ? 0.3 : 1 
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.25 }}
           className={`flex h-full items-center justify-center px-3 text-xs font-semibold uppercase tracking-wider whitespace-nowrap select-none ${
             theme === "dark" ? "text-neutral-400" : "text-neutral-600"
           }`}
@@ -49,7 +49,7 @@ export function FrequencySelector({ theme = "dark", className = "" }: FrequencyS
               initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
-              transition={{ duration: 0.3, type: "spring", bounce: 0.2 }}
+              transition={{ duration: 0.25, type: "spring", bounce: 0.2 }}
               className="absolute inset-0 flex h-full w-full justify-between gap-1.5"
             >
               <div className={`relative flex w-full items-center justify-between rounded-full px-1 shadow-sm ${
@@ -75,7 +75,7 @@ export function FrequencySelector({ theme = "dark", className = "" }: FrequencyS
                           theme === "dark" ? "bg-white/15 border border-white/10" : "bg-neutral-200/90"
                         }`}
                         style={{ zIndex: -1 }}
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.25 }}
                       />
                     )}
                     <span className="relative z-10">{opt}</span>
@@ -103,7 +103,7 @@ export function FrequencySelector({ theme = "dark", className = "" }: FrequencyS
               initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)", x: 20 }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)", x: 0 }}
               exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)", x: 20 }}
-              transition={{ duration: 0.3, type: "spring", bounce: 0.2 }}
+              transition={{ duration: 0.25, type: "spring", bounce: 0.2 }}
               className={`relative flex h-full w-fit items-center gap-1.5 rounded-full pl-3.5 pr-2.5 cursor-pointer transition-colors shadow-sm select-none ${
                 theme === "dark"
                   ? "bg-neutral-850 hover:bg-neutral-800 text-white border border-white/10"

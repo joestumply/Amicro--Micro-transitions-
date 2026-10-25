@@ -53,8 +53,8 @@ export function MonoRoundedBarChart({ theme = 'dark', compact = false }: MonoRou
     <motion.div
       initial={{ opacity: 0, scale: 0.98, y: 6 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative w-full rounded-3xl transition-all duration-300 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
+      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative w-full rounded-3xl transition-all duration-250 group flex flex-col justify-between overflow-hidden p-3.5 sm:p-4 ${
         compact ? 'aspect-[16/10] min-h-[220px] w-full' : 'min-h-[290px]'
       } ${
         isDark ? 'bg-[#141414] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/20' : 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-neutral-200 text-black hover:border-neutral-300'
@@ -97,7 +97,7 @@ export function MonoRoundedBarChart({ theme = 'dark', compact = false }: MonoRou
       </div>
 
       {/* Main Recharts Stage */}
-      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-2 transition-colors min-h-0 duration-300 touch-pan-y ${
+      <div className={`relative w-full flex-1 rounded-[14px] overflow-hidden p-2 transition-colors min-h-0 duration-250 touch-pan-y ${
         isDark ? 'bg-[#131313]' : 'bg-[#f4f4f6]'
       }`}>
         <ResponsiveContainer width="100%" height="100%">
@@ -121,7 +121,7 @@ export function MonoRoundedBarChart({ theme = 'dark', compact = false }: MonoRou
               radius={[6, 6, 6, 6]}
               barSize={compact ? 14 : 18}
               isAnimationActive={!isMobile}
-              animationDuration={isMobile ? 0 : 700}
+              animationDuration={isMobile ? 0 : 280}
             />
 
             <Bar
@@ -131,7 +131,7 @@ export function MonoRoundedBarChart({ theme = 'dark', compact = false }: MonoRou
               radius={[6, 6, 6, 6]}
               barSize={compact ? 14 : 18}
               isAnimationActive={!isMobile}
-              animationDuration={isMobile ? 0 : 700}
+              animationDuration={isMobile ? 0 : 280}
             />
           </BarChart>
         </ResponsiveContainer>
