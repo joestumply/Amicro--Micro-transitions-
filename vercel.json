@@ -1,8 +1,9 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/:path*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -11,7 +12,7 @@
       ]
     },
     {
-      "source": "/(sitemap\\.xml|robots\\.txt)",
+      "source": "/(sitemap.xml|robots.txt)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -20,7 +21,7 @@
       ]
     },
     {
-      "source": "/(llms\\.txt|llms-full\\.txt)",
+      "source": "/(llms.txt|llms-full.txt)",
       "headers": [
         {
           "key": "Content-Type",
@@ -33,7 +34,7 @@
       ]
     },
     {
-      "source": "/(r/(.*)|registry\\.json)",
+      "source": "/r/:path*",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -46,7 +47,20 @@
       ]
     },
     {
-      "source": "/(.*)",
+      "source": "/registry.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, OPTIONS"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
       "headers": [
         {
           "key": "X-Content-Type-Options",
@@ -61,7 +75,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|r/|registry\\.json).*)",
+      "source": "/((?!api/|r/|registry.json).*)",
       "destination": "/index.html"
     }
   ]
