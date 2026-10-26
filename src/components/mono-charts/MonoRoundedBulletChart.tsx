@@ -40,8 +40,12 @@ export function MonoRoundedBulletChart({ theme = 'dark', compact = false }: Mono
           <div className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             3 / 3 <span className="text-xs font-normal opacity-70">targets met</span>
           </div>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono border ${
+            isDark ? 'bg-white/5 text-neutral-300 border-white/10' : 'bg-neutral-100 text-neutral-700 border-neutral-200'
+          }`}>
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+              isDark ? 'bg-white/60' : 'bg-black/60'
+            }`} />
             100% SLO
           </span>
         </div>
@@ -81,7 +85,7 @@ export function MonoRoundedBulletChart({ theme = 'dark', compact = false }: Mono
                 />
                 {/* Target Marker */}
                 <div
-                  className="absolute top-0 bottom-0 w-1 rounded-full bg-emerald-400 shadow-sm"
+                  className={`absolute top-0 bottom-0 w-1 rounded-full shadow-sm ${isDark ? 'bg-white' : 'bg-black'}`}
                   style={{ left: `${targetMarker}%` }}
                 />
               </div>

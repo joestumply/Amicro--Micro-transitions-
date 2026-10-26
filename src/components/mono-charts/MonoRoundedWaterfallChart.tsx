@@ -49,7 +49,9 @@ export function MonoRoundedWaterfallChart({ theme = 'dark', compact = false }: M
           <div className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             $135k <span className="text-xs font-normal opacity-70">closing reserve</span>
           </div>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono border ${
+            isDark ? 'bg-white/5 text-neutral-300 border-white/10' : 'bg-neutral-100 text-neutral-700 border-neutral-200'
+          }`}>
             +$15.0k Margin
           </span>
         </div>

@@ -53,7 +53,9 @@ export function MonoRoundedStepChart({ theme = 'dark', compact = false }: MonoRo
           <div className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             68.5 <span className="text-xs font-normal opacity-70">µLamports</span>
           </div>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono border ${
+            isDark ? 'bg-white/5 text-neutral-300 border-white/10' : 'bg-neutral-100 text-neutral-700 border-neutral-200'
+          }`}>
             Median 24.8 µL
           </span>
         </div>

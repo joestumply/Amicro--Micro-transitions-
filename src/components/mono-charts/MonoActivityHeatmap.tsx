@@ -69,31 +69,34 @@ export function MonoActivityHeatmap({
   );
 
   const colorScale = useMemo(() => {
+    const monoBadge = isDark
+      ? 'bg-white/5 text-neutral-300 border-white/10'
+      : 'bg-neutral-100 text-neutral-700 border-neutral-200';
     switch (accentColor) {
       case 'green':
         return {
           bg: '#39d353',
           badgeText: 'Emerald Matrix',
-          badgePill: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+          badgePill: monoBadge,
         };
       case 'blue':
         return {
           bg: '#38bdf8',
           badgeText: 'Sky Matrix',
-          badgePill: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
+          badgePill: monoBadge,
         };
       case 'purple':
         return {
           bg: '#c084fc',
           badgeText: 'Violet Pulse',
-          badgePill: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+          badgePill: monoBadge,
         };
       case 'mono':
       default:
         return {
           bg: isDark ? '#FFFFFF' : '#09090B',
           badgeText: 'Monochrome',
-          badgePill: 'bg-white/10 text-white border-white/20',
+          badgePill: monoBadge,
         };
     }
   }, [accentColor, isDark]);
@@ -126,7 +129,7 @@ export function MonoActivityHeatmap({
             {totalContributions} <span className="text-xs font-normal opacity-70">commits</span>
           </div>
           <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono border ${colorScale.badgePill}`}>
-            <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isDark ? 'bg-white/60' : 'bg-black/60'}`} />
             42-Day Streak
           </span>
         </div>

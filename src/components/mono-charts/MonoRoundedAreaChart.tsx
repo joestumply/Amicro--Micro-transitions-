@@ -58,7 +58,9 @@ export function MonoRoundedAreaChart({ theme = 'dark', compact = false }: MonoRo
             {latestVal}
           </span>
           <span className="text-xs font-mono opacity-70">Gbps</span>
-          <span className="text-[10px] font-mono text-blue-400 font-medium">
+          <span className={`text-[10px] font-mono font-medium ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
             Peak 92%
           </span>
         </div>

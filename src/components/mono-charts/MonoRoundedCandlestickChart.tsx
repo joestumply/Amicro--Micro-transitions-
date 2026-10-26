@@ -67,7 +67,9 @@ export function MonoRoundedCandlestickChart({ theme = 'dark', compact = false }:
           <span className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             ${activeCandle.close.toFixed(2)}
           </span>
-          <span className="text-xs font-mono text-emerald-400 font-semibold">
+          <span className={`text-xs font-mono font-semibold ${
+            isDark ? 'text-neutral-300' : 'text-neutral-700'
+          }`}>
             +8.6%
           </span>
           <span className={`text-[10px] font-mono opacity-60 hidden sm:inline ${isDark ? 'text-neutral-400' : 'text-neutral-500'}`}>

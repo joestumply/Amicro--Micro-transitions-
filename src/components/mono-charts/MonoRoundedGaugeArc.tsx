@@ -34,8 +34,12 @@ export function MonoRoundedGaugeArc({ theme = 'dark', compact = false }: MonoRou
           <span className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             {val}%
           </span>
-          <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className={`inline-flex items-center gap-1 text-[10px] font-mono ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+              isDark ? 'bg-white/60' : 'bg-black/60'
+            }`} />
             OPTIMAL
           </span>
         </div>

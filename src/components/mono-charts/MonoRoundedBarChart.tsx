@@ -67,7 +67,9 @@ export function MonoRoundedBarChart({ theme = 'dark', compact = false }: MonoRou
             {latestVal}
           </span>
           <span className="text-xs font-mono opacity-70">tx/s</span>
-          <span className="text-[10px] font-mono text-emerald-400 font-medium">
+          <span className={`text-[10px] font-mono font-medium ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
             +14.8%
           </span>
         </div>

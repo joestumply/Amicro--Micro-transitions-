@@ -54,7 +54,9 @@ export function MonoRoundedStackedBarChart({ theme = 'dark', compact = false }: 
           <div className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             24.8M <span className="text-xs font-normal opacity-70">daily tx</span>
           </div>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">
+          <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono border ${
+            isDark ? 'bg-white/5 text-neutral-300 border-white/10' : 'bg-neutral-100 text-neutral-700 border-neutral-200'
+          }`}>
             52% DeFi
           </span>
         </div>

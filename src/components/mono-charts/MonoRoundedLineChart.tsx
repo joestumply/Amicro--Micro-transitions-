@@ -79,8 +79,12 @@ export function MonoRoundedLineChart({ theme = 'dark', compact = false }: MonoRo
             {latestVal}
           </span>
           <span className="text-xs font-mono opacity-70">ms</span>
-          <span className="inline-flex items-center gap-1 text-[9px] font-mono text-emerald-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className={`inline-flex items-center gap-1 text-[9px] font-mono ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+              isDark ? 'bg-white/60' : 'bg-black/60'
+            }`} />
             99.98%
           </span>
         </div>

@@ -47,7 +47,9 @@ export function MonoRoundedKpiCardChart({ theme = 'dark', compact = false }: Mon
           <span className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             $482,900
           </span>
-          <span className="text-[10px] font-mono text-emerald-400 font-medium">
+          <span className={`text-[10px] font-mono font-medium ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
             {period === 'YoY' ? '+28.4% YoY' : '+3.8% MoM'}
           </span>
         </div>

@@ -61,7 +61,9 @@ export function MonoRoundedScatterChart({ theme = 'dark', compact = false }: Mon
             32.4
           </span>
           <span className="text-xs font-mono opacity-70">ms ping</span>
-          <span className="text-[10px] font-mono text-blue-400 font-medium">
+          <span className={`text-[10px] font-mono font-medium ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
             {filteredData.length} nodes
           </span>
         </div>

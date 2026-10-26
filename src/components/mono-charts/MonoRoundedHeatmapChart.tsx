@@ -42,7 +42,9 @@ export function MonoRoundedHeatmapChart({ theme = 'dark', compact = false }: Mon
           <div className="text-xl sm:text-2xl font-bold tracking-tight tabular-nums font-sans">
             {hoveredCell ? `${hoveredCell.val}%` : '58%'}
           </div>
-          <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          <span className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-mono border ${
+            isDark ? 'bg-white/5 text-neutral-300 border-white/10' : 'bg-neutral-100 text-neutral-700 border-neutral-200'
+          }`}>
             {hoveredCell ? `${hoveredCell.day} ${hoveredCell.time}` : 'Peak 94% (16h UTC)'}
           </span>
         </div>

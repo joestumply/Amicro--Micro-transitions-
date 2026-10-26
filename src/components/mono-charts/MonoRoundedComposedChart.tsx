@@ -58,7 +58,9 @@ export function MonoRoundedComposedChart({ theme = 'dark', compact = false }: Mo
             {totalRewards}
           </span>
           <span className="text-xs font-mono opacity-70">SOL</span>
-          <span className="text-[10px] font-mono text-emerald-400 font-medium">
+          <span className={`text-[10px] font-mono font-medium ${
+            isDark ? 'text-neutral-400' : 'text-neutral-500'
+          }`}>
             8.4% APY
           </span>
         </div>
